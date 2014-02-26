@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Project">
+      <UniqueIdentifier>{e63d75fc-d620-42e3-bb20-f797cc92ba87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{a947e578-73ac-4ff5-a77c-ecdcdc077368}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Source">
+      <UniqueIdentifier>{a89eb874-65b9-426b-a7a0-949f3f3b463e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Core">
+      <UniqueIdentifier>{e28445a4-f7ef-49cd-acaf-0b3bec86ed13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Game">
+      <UniqueIdentifier>{606d29ab-e734-4a35-b525-62cbe26b184f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Libraries">
+      <UniqueIdentifier>{7f71b1bd-7253-4542-bac7-e6b9821b2203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Math">
+      <UniqueIdentifier>{70a2b596-5711-4497-80f6-7ff3544b922d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Utilities">
+      <UniqueIdentifier>{67bf07ee-d9ee-4904-a555-52ab86e11177}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\OL_Main.h">
+      <Filter>Project\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\OL_Common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\OL_Core.h">
+      <Filter>Common\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\OL_Window.h">
+      <Filter>Common\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\OL_Application.h">
+      <Filter>Common\Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\OL_Main.cpp">
+      <Filter>Project\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Core\OL_Window.cpp">
+      <Filter>Common\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Core\OL_Application.cpp">
+      <Filter>Common\Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -83,6 +83,7 @@ namespace OnLooker
         //The instance of the class.
         static Main * s_Instance;
 		HINSTANCE m_InstanceHandle;
+		Window * m_Window;
 
 
     };

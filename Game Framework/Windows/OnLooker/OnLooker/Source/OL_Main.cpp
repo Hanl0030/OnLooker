@@ -8,7 +8,7 @@
               - Wrote entry point.
 */
 
-int main()
+int WINAPI WinMain(HINSTANCE aCurrentInstance, HINSTANCE aPrevInstance, LPSTR aCommandLine, int aCommandShow)
 {
     int mainRunCode = OnLooker::Main::getInstance()->run();
     OnLooker::Main::destroy();

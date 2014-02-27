@@ -1,16 +1,22 @@
-﻿Build started 2/27/2014 11:50:54 AM.
+﻿Build started 2/27/2014 1:53:44 PM.
      1>Project "C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\OnLooker\OnLooker.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Touching "C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Int\Debug\OnLooker.unsuccessfulbuild".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Int\Debug\\" /Fd"C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Int\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\Common\Core\OL_Application.cpp ..\..\..\Common\Core\OL_Window.cpp Source\OL_Main.cpp
-         OL_Main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Int\Debug\\" /Fd"C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Int\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\Common\Core\OL_Window.cpp
          OL_Window.cpp
-         OL_Application.cpp
-         Generating Code...
-     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\ol_window.cpp(66): error C4716: 'OnLooker::Window::WindowProc' : must return a value
-     1>Done Building Project "C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\OnLooker\OnLooker.vcxproj" (build target(s)) -- FAILED.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Debug\OnLooker.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Int\Debug\OnLooker.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\Output\Debug\OnLooker.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Debug\OnLooker.lib" /MACHINE:X86 "C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Int\Debug\OL_Application.obj"
+         "C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Int\Debug\OL_Window.obj"
+         "C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Int\Debug\OL_Main.obj"
+         OnLooker.vcxproj -> C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Debug\OnLooker.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Debug\OnLooker.exe;#1" /manifest "C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Int\Debug\OnLooker.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         Deleting file "C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Int\Debug\OnLooker.unsuccessfulbuild".
+         Touching "C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\\Output\Int\Debug\OnLooker.lastbuildstate".
+     1>Done Building Project "C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\OnLooker\OnLooker.vcxproj" (build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.12
+Time Elapsed 00:00:00.85

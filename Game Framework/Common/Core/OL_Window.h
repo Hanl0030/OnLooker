@@ -9,6 +9,7 @@
 
 namespace OnLooker
 {
+	/*
 	//WINDOWS WINDOW
     class Window
     {
@@ -33,6 +34,9 @@ namespace OnLooker
 		int m_Width;
 		int m_Height;
 
+		//Window Bits
+		int m_Bits;
+
 
 		//Mouse Positions
 		int m_MouseX;
@@ -46,6 +50,8 @@ namespace OnLooker
 
 		//Window Style
 		DWORD m_Style;
+		DWORD m_FullscreenModeStyle;
+		DWORD m_WindowedModeStyle;
 
 		//Dimensions just before full screen enable
 		int m_RestoreX;
@@ -62,8 +68,40 @@ namespace OnLooker
 		//
 		bool m_IsFullScreen;
 
+		HDC m_DeviceContext;
+		HGLRC m_OpenGLContext;
 
-    };
+
+    };*/
+
+
+	class Window
+	{
+	public:
+		Window();
+		Window(int aWidth, int aHeight, int aBits, bool aFullScreen = false);
+		~Window();
+
+		void swapBuffers();
+
+	private:
+		void registerWindowClass();
+		void createContext();
+		void initGL();
+		void resizeGLScene();
+		static LRESULT CALLBACK eventHandle(HWND aHandle, UINT aMessage, WPARAM aWParam, LPARAM aLParam);
+		void processEvent(UINT aMessage, WPARAM aWParam, LPARAM aLParam);
+
+		HWND m_Window;
+		HDC m_DeviceContext;
+		HGLRC m_OpenGLContext;
+
+		int m_WindowWidth;
+		int m_WindowHeight;
+		std::string m_ClassName;
+		bool m_FullScreen;
+
+	};
 
 }
 

@@ -12,6 +12,7 @@
 #include "../../../../Common/OL_Common.h"
 
 
+
 namespace OnLooker
 {
 
@@ -51,6 +52,9 @@ namespace OnLooker
         */
         int run();
 
+
+		HINSTANCE getInstanceHandle();
+
         //Methods
     private:
         /*
@@ -78,6 +82,7 @@ namespace OnLooker
     private:
         //The instance of the class.
         static Main * s_Instance;
+		HINSTANCE m_InstanceHandle;
 
 
     };

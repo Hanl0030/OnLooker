@@ -67,6 +67,18 @@ namespace OnLooker
 
             return 0;
         }
+
+
+
+		HINSTANCE Main::getInstanceHandle()
+		{
+			if(!m_InstanceHandle)
+			{
+				m_InstanceHandle = GetModuleHandle(NULL);
+			}
+
+			return m_InstanceHandle;
+		}
         
 
         

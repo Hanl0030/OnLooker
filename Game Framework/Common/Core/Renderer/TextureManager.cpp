@@ -51,6 +51,7 @@ bool TextureManager::LoadTexture(const char* filename, const unsigned int texID,
 	BYTE* bits(0);
 	//image width and height
 	unsigned int width(0), height(0);
+
 	//OpenGL's image ID to map to
 	GLuint gl_texID;
 	

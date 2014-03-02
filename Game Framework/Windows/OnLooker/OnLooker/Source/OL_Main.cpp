@@ -101,20 +101,15 @@ namespace OnLooker
                 
                 //Clear 
                 Renderer::getInstance()->clear();
-                for(int i = 0; i < 10; i++)
-                {
-                    Renderer::getInstance()->drawCircle(genRandomNumber(0,m_Window->getWindowWidth()),
-                        genRandomNumber(0,m_Window->getWindowHeight()),
-                        genRandomNumber(5,150));
-                }
 
                 //Renderer::getInstance()->drawCircle(30.0f,150.0f,100.0f);
                 Renderer::getInstance()->checkForErrors();
 
                 Application::getInstance()->onIdle();
                 
-                
+
                 //Update window
+                Input::getInstance()->handleStates();
                 m_Window->swapBuffers();
                 m_Window->pollEvents();
             }

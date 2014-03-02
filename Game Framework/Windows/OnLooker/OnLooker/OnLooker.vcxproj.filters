@@ -102,6 +102,12 @@
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Texture.h">
       <Filter>Common\Core\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\Window\OL_Input.h">
+      <Filter>Common\Core\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\Window\OL_KeyDef.h">
+      <Filter>Common\Core\Window</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\OL_Main.cpp">
@@ -148,6 +154,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Texture.cpp">
       <Filter>Common\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Core\Window\OL_Input.cpp">
+      <Filter>Common\Core\Window</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

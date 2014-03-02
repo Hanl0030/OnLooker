@@ -21,6 +21,8 @@
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_VertexAttribute.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\TextureManager.h" />
     <ClInclude Include="..\..\..\Common\Core\Window\OL_Application.h" />
+    <ClInclude Include="..\..\..\Common\Core\Window\OL_Input.h" />
+    <ClInclude Include="..\..\..\Common\Core\Window\OL_KeyDef.h" />
     <ClInclude Include="..\..\..\Common\Core\Window\OL_Window.h" />
     <ClInclude Include="..\..\..\Common\Libraries\OL_OpenGL.h" />
     <ClInclude Include="..\..\..\Common\OL_Common.h" />
@@ -40,6 +42,7 @@
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_VertexAttribute.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Renderer\TextureManager.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Window\OL_Application.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Window\OL_Input.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Window\OL_Window.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Console.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Debug.cpp" />

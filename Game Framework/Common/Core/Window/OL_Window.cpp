@@ -1,11 +1,11 @@
 #include "OL_Window.h"
 #include "../../../Windows/OnLooker/OnLooker/Source/OL_Main.h"
 #include "../../Libraries/OL_OpenGL.h"
-
 namespace OnLooker
 {
     Window::Window()
     {
+        
         m_Window = 0;
         m_WindowWidth = 1024;
         m_WindowHeight = 768;
@@ -114,24 +114,29 @@ namespace OnLooker
     void Window::m_ErrorCallback(int aError, const char * aDescription)
     {
         //TODO:Log the error using Debug.Log
+        Debug::console->output("Error %i: %c \n",aError,aDescription);
     }
     
     void Window::m_KeyCallback(GLFWwindow * aWindow, int aKey, int aScanCode, int aAction, int aMods)
     {
         //TODO:Send input data to singleton input manager
+        Input::getInstance()->handleKeyEvent(aKey,aAction);
     }
     void Window::m_MouseButtonCallback(GLFWwindow * aWindow, int aButton, int aAction, int aMods)
     {
         //TODO:Send input data to singleton input manager
+        Input::getInstance()->handleMouseButtonEvent(aButton,aAction);
     }
     
     void Window::m_MouseMoveCallback(GLFWwindow * aWindow, double aXPosition, double aYPosition)
     {
         //TODO:Send input data to singleton input manager
+        Input::getInstance()->handleMouseMove(aXPosition,aYPosition);
     }
     void Window::m_MouseScrollCallback(GLFWwindow * aWindow, double aXAxis, double aYAxis)
     {
         //TODO:Send input data to singleton input manager
+        Input::getInstance()->handleMouseScroll(aXAxis,aYAxis);
     }
 
     double Window::getTime()

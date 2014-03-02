@@ -2,7 +2,7 @@
 #define OL_TEXTURE_H
 
 #include <string>
-#include "../../Win32/Definitions/OL_OpenGL.h"
+#include "../../Libraries/OL_OpenGL.h"
 #include "OL_Color.h"
 
 

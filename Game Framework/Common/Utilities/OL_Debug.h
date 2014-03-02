@@ -21,6 +21,9 @@ namespace OnLooker
     {
     public:
         static Console * console;
+
+        static void initialize();
+        static void destroy();
     };
 
 }

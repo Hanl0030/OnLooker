@@ -60,17 +60,20 @@ namespace OnLooker
             if(m_Window->createWindow() == false)
             {
                 //TODO: Debug Error
+                Debug::console->output("Failure to create window");
                 return -1;
             }
             if(Application::getInstance()->init() != true)
             {
                 //Something went wrong
+                Debug::console->output("Failure to initialize Application");
                 return -1;
             }
             //Setup Time Variables pre loop
             Time::m_CurrentTime = Window::getTime();
             Time::m_LastTime = Time::m_CurrentTime;
             Time::m_Delta = Time::m_CurrentTime - Time::m_LastTime;
+
 
             //Game Loop Here
             //TODO: Implement game update and render calls
@@ -81,6 +84,7 @@ namespace OnLooker
                 Time::m_CurrentTime = Window::getTime();
                 Time::m_LastTime = Time::m_CurrentTime;
                 Time::m_Delta = Time::m_CurrentTime - Time::m_LastTime;
+
                 
                 
                 //Update window
@@ -105,6 +109,10 @@ namespace OnLooker
                 delete m_Window;
                 m_Window = 0;
             }
+
+
+            Debug::destroy();
+            FilePath::destroy();
 
             return 0;
         }

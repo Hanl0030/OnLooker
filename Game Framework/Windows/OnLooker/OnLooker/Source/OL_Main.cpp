@@ -60,13 +60,15 @@ namespace OnLooker
             if(m_Window->createWindow() == false)
             {
                 //TODO: Debug Error
-                Debug::console->output("Failure to create window");
+                Debug::console->output("Failure to create window \n");
+                runExit();
                 return -1;
             }
             if(Application::getInstance()->init() != true)
             {
                 //Something went wrong
-                Debug::console->output("Failure to initialize Application");
+                Debug::console->output("Failure to initialize Application \n");
+                runExit();
                 return -1;
             }
             //Setup Time Variables pre loop
@@ -74,6 +76,16 @@ namespace OnLooker
             Time::m_LastTime = Time::m_CurrentTime;
             Time::m_Delta = Time::m_CurrentTime - Time::m_LastTime;
 
+            //Renderer setup
+            Renderer::getInstance()->initialize(m_Window->getWindowWidth(),m_Window->getWindowHeight());
+            if(Renderer::getInstance()->isReadyInitalized() != true)
+            {
+                Debug::console->output("Failure to initialize Renderer \n");
+                runExit();
+                return -1;
+            }
+
+            onLookerInit();
 
             //Game Loop Here
             //TODO: Implement game update and render calls
@@ -85,6 +97,21 @@ namespace OnLooker
                 Time::m_LastTime = Time::m_CurrentTime;
                 Time::m_Delta = Time::m_CurrentTime - Time::m_LastTime;
 
+
+                
+                //Clear 
+                Renderer::getInstance()->clear();
+                for(int i = 0; i < 10; i++)
+                {
+                    Renderer::getInstance()->drawCircle(genRandomNumber(0,m_Window->getWindowWidth()),
+                        genRandomNumber(0,m_Window->getWindowHeight()),
+                        genRandomNumber(5,150));
+                }
+
+                //Renderer::getInstance()->drawCircle(30.0f,150.0f,100.0f);
+                Renderer::getInstance()->checkForErrors();
+
+                Application::getInstance()->onIdle();
                 
                 
                 //Update window
@@ -92,14 +119,13 @@ namespace OnLooker
                 m_Window->pollEvents();
             }
 
-            
-            
+            runExit();
+            return 0;
+        }
 
-
-
-            Application::getInstance()->onIdle();
-
-
+        //This function gets called before run is left
+        void Main::runExit()
+        {
             Application::getInstance()->destroy();
 
             
@@ -113,11 +139,7 @@ namespace OnLooker
 
             Debug::destroy();
             FilePath::destroy();
-
-            return 0;
         }
-
-
 
         
 

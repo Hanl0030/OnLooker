@@ -87,6 +87,21 @@
     <ClInclude Include="..\..\..\Common\Utilities\OL_FilePath.h">
       <Filter>Common\Utilities\FilePath</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Mesh.h">
+      <Filter>Common\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\Renderer\OL_VertexAttribute.h">
+      <Filter>Common\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Color.h">
+      <Filter>Common\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Shader.h">
+      <Filter>Common\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Texture.h">
+      <Filter>Common\Core\Renderer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\OL_Main.cpp">
@@ -115,6 +130,24 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Common\Utilities\OL_FilePath.cpp">
       <Filter>Common\Utilities\FilePath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Mesh.cpp">
+      <Filter>Common\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Core\Renderer\OL_VertexAttribute.cpp">
+      <Filter>Common\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Color.cpp">
+      <Filter>Common\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Shader.cpp">
+      <Filter>Common\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Utilities\OL_Utilities.cpp">
+      <Filter>Common\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Texture.cpp">
+      <Filter>Common\Core\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

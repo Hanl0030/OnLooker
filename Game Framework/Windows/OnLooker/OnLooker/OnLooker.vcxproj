@@ -13,7 +13,12 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Output.h" />
     <ClInclude Include="..\..\..\Common\Core\OL_Core.h" />
+    <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Color.h" />
+    <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Mesh.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Renderer.h" />
+    <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Shader.h" />
+    <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Texture.h" />
+    <ClInclude Include="..\..\..\Common\Core\Renderer\OL_VertexAttribute.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\TextureManager.h" />
     <ClInclude Include="..\..\..\Common\Core\Window\OL_Application.h" />
     <ClInclude Include="..\..\..\Common\Core\Window\OL_Window.h" />
@@ -27,7 +32,12 @@
     <ClInclude Include="Source\OL_Main.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Color.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Mesh.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Renderer.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Shader.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Texture.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Renderer\OL_VertexAttribute.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Renderer\TextureManager.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Window\OL_Application.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Window\OL_Window.cpp" />
@@ -35,6 +45,7 @@
     <ClCompile Include="..\..\..\Common\Utilities\OL_Debug.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_FilePath.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Time.cpp" />
+    <ClCompile Include="..\..\..\Common\Utilities\OL_Utilities.cpp" />
     <ClCompile Include="Source\OL_Main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

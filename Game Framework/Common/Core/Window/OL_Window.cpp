@@ -40,19 +40,20 @@ namespace OnLooker
         if(!glfwInit())
         {
             //Error
+            Debug::console->output("glfw failed to init \n");
             destroy();
             return false;
         }
 
         //Create the window
         glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-        glfwWindowHint(GLFW_CLIENT_API, GLFW_OPENGL_API);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
         m_Window = glfwCreateWindow(m_WindowWidth,m_WindowHeight,m_WindowName.c_str(),0,0);
 
         if(!m_Window)
         {
+            Debug::console->output("window failed to init \n");
             destroy();
             return false;
         }
@@ -71,6 +72,7 @@ namespace OnLooker
         //Initialize glew
         if(glewInit() != GLEW_OK)
         {
+            Debug::console->output("glew failed to init \n");
             destroy();
             return false;
         }

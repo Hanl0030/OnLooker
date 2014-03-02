@@ -78,6 +78,9 @@ namespace OnLooker
         ~Main();
         
 
+        void runExit();
+
+
         //Member Variables
     public:
 

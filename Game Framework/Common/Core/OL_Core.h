@@ -10,6 +10,7 @@
 
 #include "Window/OL_Window.h"
 #include "Window/OL_Application.h"
+#include "Renderer/OL_Renderer.h"
 
 namespace OnLooker
 {

@@ -5,7 +5,8 @@
 *   Date Modified: 25/02/2014 by Nathan Hanlan
 *   Comments: v1.0.0 Initial Creation
 *             - Added Main Class
-              - Added Include for the path to the OL_Common.h
+*             - Added Include for the path to the OL_Common.h
+*   v1.0.1    - Added variable m_Window;
 */
 
 //Include the path to the common folder

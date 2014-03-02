@@ -8,7 +8,8 @@
 *   Date Modified: 25/02/2014 by Nathan Hanlan
 *   Comments: v1.0.0 Initial Creation
 *             - Implemented Main Class
-              - Wrote entry point.
+*             - Wrote entry point.
+*             - Implemented game loop and delta time calculation
 */
 
 int main()
@@ -81,7 +82,7 @@ namespace OnLooker
                 Time::m_LastTime = Time::m_CurrentTime;
                 Time::m_Delta = Time::m_CurrentTime - Time::m_LastTime;
                 
-
+                
                 //Update window
                 m_Window->swapBuffers();
                 m_Window->pollEvents();

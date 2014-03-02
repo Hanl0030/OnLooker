@@ -11,12 +11,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Output.h" />
     <ClInclude Include="..\..\..\Common\Core\OL_Core.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\TextureManager.h" />
     <ClInclude Include="..\..\..\Common\Core\Window\OL_Application.h" />
     <ClInclude Include="..\..\..\Common\Core\Window\OL_Window.h" />
     <ClInclude Include="..\..\..\Common\Libraries\OL_OpenGL.h" />
     <ClInclude Include="..\..\..\Common\OL_Common.h" />
+    <ClInclude Include="..\..\..\Common\Utilities\OL_Console.h" />
+    <ClInclude Include="..\..\..\Common\Utilities\OL_Debug.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_Utilities.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_Time.h" />
     <ClInclude Include="Source\OL_Main.h" />
@@ -25,6 +28,8 @@
     <ClCompile Include="..\..\..\Common\Core\Renderer\TextureManager.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Window\OL_Application.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Window\OL_Window.cpp" />
+    <ClCompile Include="..\..\..\Common\Utilities\OL_Console.cpp" />
+    <ClCompile Include="..\..\..\Common\Utilities\OL_Debug.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Time.cpp" />
     <ClCompile Include="Source\OL_Main.cpp" />
   </ItemGroup>

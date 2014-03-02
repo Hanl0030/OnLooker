@@ -34,6 +34,12 @@
     <Filter Include="Common\Utilities\Time">
       <UniqueIdentifier>{0202e018-2128-467a-8655-ac8af15bde95}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common\Utilities\Debug">
+      <UniqueIdentifier>{151574ae-6297-46da-b86d-158fc5af9eec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Core\Base-Objects">
+      <UniqueIdentifier>{d488e116-9153-48b3-bc37-b349a10a26fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\OL_Main.h">
@@ -63,6 +69,15 @@
     <ClInclude Include="..\..\..\Common\OL_Common.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Common\Utilities\OL_Debug.h">
+      <Filter>Common\Utilities\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Utilities\OL_Console.h">
+      <Filter>Common\Utilities\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Output.h">
+      <Filter>Common\Core\Base-Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\OL_Main.cpp">
@@ -79,6 +94,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Common\Utilities\OL_Time.cpp">
       <Filter>Common\Utilities\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Utilities\OL_Debug.cpp">
+      <Filter>Common\Utilities\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Utilities\OL_Console.cpp">
+      <Filter>Common\Utilities\Debug</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

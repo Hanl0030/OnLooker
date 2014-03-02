@@ -2,56 +2,83 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Project">
-      <UniqueIdentifier>{e63d75fc-d620-42e3-bb20-f797cc92ba87}</UniqueIdentifier>
+      <UniqueIdentifier>{07ec51ea-00a3-4005-b52f-44666ff0907d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Common">
-      <UniqueIdentifier>{a947e578-73ac-4ff5-a77c-ecdcdc077368}</UniqueIdentifier>
+      <UniqueIdentifier>{9602529a-6594-46da-a135-1648b97c6cfd}</UniqueIdentifier>
     </Filter>
     <Filter Include="Project\Source">
-      <UniqueIdentifier>{a89eb874-65b9-426b-a7a0-949f3f3b463e}</UniqueIdentifier>
+      <UniqueIdentifier>{21f498e9-d980-42b4-8bbe-0750c9878762}</UniqueIdentifier>
     </Filter>
     <Filter Include="Common\Core">
-      <UniqueIdentifier>{e28445a4-f7ef-49cd-acaf-0b3bec86ed13}</UniqueIdentifier>
+      <UniqueIdentifier>{3f47935b-d7f7-4d91-9c11-2421bd9625ce}</UniqueIdentifier>
     </Filter>
     <Filter Include="Common\Game">
-      <UniqueIdentifier>{606d29ab-e734-4a35-b525-62cbe26b184f}</UniqueIdentifier>
+      <UniqueIdentifier>{e8f8f799-d1ee-4ff4-9428-2e6b3e2b8ca7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Common\Libraries">
-      <UniqueIdentifier>{7f71b1bd-7253-4542-bac7-e6b9821b2203}</UniqueIdentifier>
+      <UniqueIdentifier>{753dd6ea-8d41-434e-82e8-5c06feef27ff}</UniqueIdentifier>
     </Filter>
     <Filter Include="Common\Math">
-      <UniqueIdentifier>{70a2b596-5711-4497-80f6-7ff3544b922d}</UniqueIdentifier>
+      <UniqueIdentifier>{7aae475d-cdbe-4b37-8652-71b1b6041714}</UniqueIdentifier>
     </Filter>
     <Filter Include="Common\Utilities">
-      <UniqueIdentifier>{67bf07ee-d9ee-4904-a555-52ab86e11177}</UniqueIdentifier>
+      <UniqueIdentifier>{fc4d08eb-1f75-456b-bdd7-5e245a43b509}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Core\Window">
+      <UniqueIdentifier>{b8064e12-346e-43fc-8262-50bdb6167975}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Core\Renderer">
+      <UniqueIdentifier>{bd33ad4b-cf24-4b1d-a6a5-c91b2433b1fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Utilities\Time">
+      <UniqueIdentifier>{0202e018-2128-467a-8655-ac8af15bde95}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\OL_Main.h">
       <Filter>Project\Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Common\OL_Common.h">
-      <Filter>Common</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Common\Core\OL_Core.h">
       <Filter>Common\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Common\Core\OL_Window.h">
-      <Filter>Common\Core</Filter>
+    <ClInclude Include="..\..\..\Common\Libraries\OL_OpenGL.h">
+      <Filter>Common\Libraries</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Common\Core\OL_Application.h">
-      <Filter>Common\Core</Filter>
+    <ClInclude Include="..\..\..\Common\Core\Window\OL_Application.h">
+      <Filter>Common\Core\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\Window\OL_Window.h">
+      <Filter>Common\Core\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\Renderer\TextureManager.h">
+      <Filter>Common\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Utilities\OL_Utilities.h">
+      <Filter>Common\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Utilities\OL_Time.h">
+      <Filter>Common\Utilities\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\OL_Common.h">
+      <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\OL_Main.cpp">
       <Filter>Project\Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Common\Core\OL_Window.cpp">
-      <Filter>Common\Core</Filter>
+    <ClCompile Include="..\..\..\Common\Core\Window\OL_Application.cpp">
+      <Filter>Common\Core\Window</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Common\Core\OL_Application.cpp">
-      <Filter>Common\Core</Filter>
+    <ClCompile Include="..\..\..\Common\Core\Window\OL_Window.cpp">
+      <Filter>Common\Core\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Core\Renderer\TextureManager.cpp">
+      <Filter>Common\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Utilities\OL_Time.cpp">
+      <Filter>Common\Utilities\Time</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

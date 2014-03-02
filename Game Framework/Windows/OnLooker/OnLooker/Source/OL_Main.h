@@ -13,9 +13,11 @@
 
 
 
+
+
 namespace OnLooker
 {
-
+    class Window;
     /*
     *   Class: Main
     *   Base Class: N/A
@@ -53,7 +55,7 @@ namespace OnLooker
         int run();
 
 
-		HINSTANCE getInstanceHandle();
+		
 
         //Methods
     private:
@@ -82,9 +84,7 @@ namespace OnLooker
     private:
         //The instance of the class.
         static Main * s_Instance;
-		HINSTANCE m_InstanceHandle;
-		Window * m_Window;
-
+        Window * m_Window;
 
     };
 }

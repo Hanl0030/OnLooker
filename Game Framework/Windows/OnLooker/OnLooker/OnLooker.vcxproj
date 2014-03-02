@@ -11,19 +11,25 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Common\Core\OL_Application.h" />
     <ClInclude Include="..\..\..\Common\Core\OL_Core.h" />
-    <ClInclude Include="..\..\..\Common\Core\OL_Window.h" />
+    <ClInclude Include="..\..\..\Common\Core\Renderer\TextureManager.h" />
+    <ClInclude Include="..\..\..\Common\Core\Window\OL_Application.h" />
+    <ClInclude Include="..\..\..\Common\Core\Window\OL_Window.h" />
+    <ClInclude Include="..\..\..\Common\Libraries\OL_OpenGL.h" />
     <ClInclude Include="..\..\..\Common\OL_Common.h" />
+    <ClInclude Include="..\..\..\Common\Utilities\OL_Utilities.h" />
+    <ClInclude Include="..\..\..\Common\Utilities\OL_Time.h" />
     <ClInclude Include="Source\OL_Main.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Common\Core\OL_Application.cpp" />
-    <ClCompile Include="..\..\..\Common\Core\OL_Window.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Renderer\TextureManager.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Window\OL_Application.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Window\OL_Window.cpp" />
+    <ClCompile Include="..\..\..\Common\Utilities\OL_Time.cpp" />
     <ClCompile Include="Source\OL_Main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{C2132F33-686E-49D8-8732-EBE49AB526BE}</ProjectGuid>
+    <ProjectGuid>{0C676901-53F4-4AAA-BC4E-BC62F3BCF645}</ProjectGuid>
     <RootNamespace>OnLooker</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -36,7 +42,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -49,25 +55,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)\Output\$(Configuration)\</OutDir>
+    <IncludePath>../../../Common/Libraries/glfw-3.0.4;../../../Common/Libraries/glew-1.10.0;../../../Common/Libraries/freeImage;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IntDir>$(SolutionDir)\Output\Int\$(Configuration)\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)\Output\$(Configuration)\</OutDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IntDir>$(SolutionDir)\Output\Int\$(Configuration)\</IntDir>
+    <LibraryPath>../../../Common/Libraries/glfw-3.0.4;../../../Common/Libraries/glew-1.10.0;../../../Common/Libraries/freeImage;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -81,7 +82,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

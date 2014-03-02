@@ -1,4 +1,7 @@
 #include "OL_Main.h"
+#include "../../../../Common/Libraries/OL_OpenGL.h"
+#include <iostream>
+
 
 /*
 *   Filename: OL_Main.cpp
@@ -8,8 +11,9 @@
               - Wrote entry point.
 */
 
-int WINAPI WinMain(HINSTANCE aCurrentInstance, HINSTANCE aPrevInstance, LPSTR aCommandLine, int aCommandShow)
+int main()
 {
+    
     int mainRunCode = OnLooker::Main::getInstance()->run();
     OnLooker::Main::destroy();
 
@@ -40,7 +44,8 @@ namespace OnLooker
 
         Main::Main()
         {
-
+            m_Window = 0;
+            
         }
         Main::~Main()
         {
@@ -49,15 +54,42 @@ namespace OnLooker
 
         int Main::run()
         {
-            //TODO: Write window Creation code here and loop
+            //Create Window
+            m_Window = new Window(1024,768,"OnLooker v3.0");
+            if(m_Window->createWindow() == false)
+            {
+                //TODO: Debug Error
+                return -1;
+            }
             if(Application::getInstance()->init() != true)
             {
                 //Something went wrong
                 return -1;
             }
+            //Setup Time Variables pre loop
+            Time::m_CurrentTime = Window::getTime();
+            Time::m_LastTime = Time::m_CurrentTime;
+            Time::m_Delta = Time::m_CurrentTime - Time::m_LastTime;
 
+            //Game Loop Here
+            //TODO: Implement game update and render calls
+            while(!m_Window->shouldWindowClose())
+            {
 
-            //Loop this
+                //Calculate delta
+                Time::m_CurrentTime = Window::getTime();
+                Time::m_LastTime = Time::m_CurrentTime;
+                Time::m_Delta = Time::m_CurrentTime - Time::m_LastTime;
+                
+
+                //Update window
+                m_Window->swapBuffers();
+                m_Window->pollEvents();
+            }
+
+            
+            
+
 
 
             Application::getInstance()->onIdle();
@@ -65,20 +97,19 @@ namespace OnLooker
 
             Application::getInstance()->destroy();
 
+            
+            if(m_Window != 0)
+            {
+                m_Window->destroy();
+                delete m_Window;
+                m_Window = 0;
+            }
+
             return 0;
         }
 
 
 
-		HINSTANCE Main::getInstanceHandle()
-		{
-			if(!m_InstanceHandle)
-			{
-				m_InstanceHandle = GetModuleHandle(NULL);
-			}
-
-			return m_InstanceHandle;
-		}
         
 
         

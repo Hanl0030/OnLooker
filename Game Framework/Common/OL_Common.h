@@ -9,6 +9,7 @@
 */
 
 #include "Core/OL_Core.h"
+#include "Utilities/OL_Utilities.h"
 
 namespace OnLooker
 {

@@ -8,8 +8,8 @@
 *             - Added Includes for OL_Window.h and OL_Application.h
 */
 
-#include "OL_Window.h"
-#include "OL_Application.h"
+#include "Window/OL_Window.h"
+#include "Window/OL_Application.h"
 
 namespace OnLooker
 {

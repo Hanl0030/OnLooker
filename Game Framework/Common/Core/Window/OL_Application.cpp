@@ -1,4 +1,5 @@
 #include "OL_Application.h"
+#include "../../Game/OL_Game.h"
 #include <iostream>
 
 
@@ -26,13 +27,17 @@ namespace OnLooker
         Application::Application()
         {
             m_Init = false;
-
+            m_Game = 0;
             
         }
 
         Application::~Application()
         {
-
+            if(m_Game != 0)
+            {
+                delete m_Game;
+                m_Game = 0;
+            }
         }
 
         bool Application::init()
@@ -42,6 +47,7 @@ namespace OnLooker
                 return m_Init;
             }
             //TODO: Initialize Application
+            m_Game = new Game();
 
             //Temp Code ***REMOVE***
             m_Init = true;
@@ -57,9 +63,11 @@ namespace OnLooker
             {
                 return;
             }
-
-            //TODO: Write game update / render methods
-
+            if(m_Game != 0)
+            {
+                m_Game->update();
+                m_Game->render();
+            }
         }
 
         

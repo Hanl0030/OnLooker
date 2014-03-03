@@ -23,12 +23,10 @@ namespace OnLooker
             float u;
             float v;
         };
-
-        
         Position m_Position;
         Color m_Color;
         TexCoord m_TexCoords;
-
+        
     };
 
 }

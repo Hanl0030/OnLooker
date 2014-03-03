@@ -96,18 +96,13 @@ namespace OnLooker
                 Time::m_CurrentTime = Window::getTime();
                 Time::m_LastTime = Time::m_CurrentTime;
                 Time::m_Delta = Time::m_CurrentTime - Time::m_LastTime;
-
-
-                
                 //Clear 
                 Renderer::getInstance()->clear();
+                //Game Update/Render
+                Application::getInstance()->onIdle(); 
 
-                //Renderer::getInstance()->drawCircle(30.0f,150.0f,100.0f);
+                //Check for Errors
                 Renderer::getInstance()->checkForErrors();
-
-                Application::getInstance()->onIdle();
-                
-
                 //Update window
                 Input::getInstance()->handleStates();
                 m_Window->swapBuffers();

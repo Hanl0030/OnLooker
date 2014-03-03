@@ -10,16 +10,13 @@
 namespace OnLooker
 {
 
-    class Color;
+    class TextureReference;
 
     class Texture
     {
     public:
         Texture();
-        Texture(unsigned int aID, unsigned int aFileWidth, unsigned int aFileHeight, std::string aFilename, std::string aTextureName);
-        Texture(unsigned int aID, unsigned int aFileWidth, unsigned int aFileHeight, std::string aFilename, std::string aTextureName, std::string aTextureCoordinateName,
-            unsigned int aSourceWidth, unsigned int aSourceHeight, unsigned int aSourceX, unsigned int aSourceY);
-
+        ~Texture();
 
         unsigned int getID();
         unsigned int getFileWidth();
@@ -28,7 +25,7 @@ namespace OnLooker
         std::string getFilename();
         std::string getTextureName();
 
-        std::string getTextureCoordinateName();
+
         unsigned int getSourceWidth();
         unsigned int getSourceHeight();
         unsigned int getSourceX();
@@ -39,19 +36,6 @@ namespace OnLooker
         float getMaxV();
 
 
-        float getAnchorPointX();
-        float getAnchorPointY();
-
-        GLenum getFormat();
-
-        float getAlpha();
-        float getRed();
-        float getGreen();
-        float getBlue();
-        Color getColor();
-
-        void setColor(Color aColor);
-
     private:
         unsigned int m_ID;
         unsigned int m_FileWidth;
@@ -59,7 +43,6 @@ namespace OnLooker
         std::string m_Filename;
         std::string m_TextureName;
 
-        std::string m_TextureCoordinateName;
         unsigned int m_SourceWidth;
         unsigned int m_SourceHeight;
         unsigned int m_SourceX;
@@ -71,8 +54,7 @@ namespace OnLooker
         float m_MaxU;
         float m_MaxV;
 
-        Color m_TextureColor;
-
+        friend TextureReference;
     };
 }
 

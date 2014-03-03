@@ -1,5 +1,7 @@
 #include "OL_Renderer.h"
 #include "../../Utilities/OL_Utilities.h"
+#include "OL_TextureReference.h"
+#include "OL_Texture.h"
 
 namespace OnLooker
 {
@@ -227,26 +229,28 @@ namespace OnLooker
 	    glDisableClientState(GL_COLOR_ARRAY);
     }
 
-    void Renderer::drawTexture(Texture * aTexture, float x, float y, float aAngle )
+    void Renderer::drawTexture(unsigned int aTextureID, float x, float y, float aAngle )
     {
-        /*if(aTexture != NULL)
+        Texture * texture = getTexture(aTextureID);
+        if(texture != NULL)
         {
-            drawTexture(aTexture, x, y, aTexture->getSourceWidth(), aTexture->getSourceHeight(), aAngle);
-        }*/
+            drawTexture(aTextureID, x, y, texture->getSourceWidth(), texture->getSourceHeight(), aAngle);
+        }
     }
-    void Renderer::drawTexture(Texture * aTexture, float x, float y, float aWidth, float aHeight, float aAngle)
+    void Renderer::drawTexture(unsigned int aTextureID, float x, float y, float aWidth, float aHeight, float aAngle)
     {
-        /*//Safety check the texture
-	    if(aTexture != NULL)
+        Texture * texture = getTexture(aTextureID); 
+        //Safety check the texture
+	    if(texture != NULL)
 	    {
             float uvCoordinates[8];
 		    float vertices[8];
         
 		
-		    uvCoordinates[0] = aTexture->getMinU(); uvCoordinates[1] = aTexture->getMinV();
-		    uvCoordinates[2] = aTexture->getMaxU(); uvCoordinates[3] = aTexture->getMinV();
-		    uvCoordinates[4] = aTexture->getMaxU(); uvCoordinates[5] = aTexture->getMaxV();
-		    uvCoordinates[6] = aTexture->getMaxU(); uvCoordinates[7] = aTexture->getMaxV();
+		    uvCoordinates[0] = texture->getMinU(); uvCoordinates[1] = texture->getMinV();
+		    uvCoordinates[2] = texture->getMaxU(); uvCoordinates[3] = texture->getMinV();
+		    uvCoordinates[4] = texture->getMaxU(); uvCoordinates[5] = texture->getMaxV();
+		    uvCoordinates[6] = texture->getMaxU(); uvCoordinates[7] = texture->getMaxV();
         
 		    //Set the vertices
 		    vertices[0] = 0.0f;           vertices[1] = 0.0f + aHeight;
@@ -254,11 +258,13 @@ namespace OnLooker
 		    vertices[4] = 0.0f;           vertices[5] = 0.0f;
 		    vertices[6] = 0.0f + aWidth; 	vertices[7] = 0.0f;
         
+           
+
             //Push the Matrix
             glPushMatrix();
         
             //Translate the texture
-            glTranslatef(x - (aTexture->getSourceWidth() * aTexture->getAnchorPointX()), y - (aTexture->getSourceHeight() * aTexture->getAnchorPointY()), 0.0f);
+            glTranslatef(x, y, 0.0f);
         
             //Rotate the texture
             if(aAngle != 0.0f)
@@ -270,49 +276,43 @@ namespace OnLooker
             }
         
 		    //Draw the texture
-		    drawTexture(aTexture, uvCoordinates, vertices);
+            drawTexture(aTextureID, uvCoordinates, vertices);
         
             //Pop the Matrix
             glPopMatrix();
-        }*/
+        }
     }
 
-    void Renderer::drawTexture(Texture * aTexture, float * aTexCoordinates, float * aVertices)
+    void Renderer::drawTexture(unsigned int aTextureID, float * aTexCoordinates, float * aVertices)
     {
-        /*if(aTexture != NULL)
+        Texture * texture = getTexture(aTextureID);
+        if(texture != NULL)
 	    {
 		    int vertexCount = 4;
 		    int vertexSize = 2;
         
 		    //Setup the colors array based on the foreground color
-		    bool hasTransparency = aTexture->getFormat() == GL_RGBA || aTexture->getAlpha() != 1.0f;
-		    int colorSize = hasTransparency ? 4 : 3;
+		    int colorSize = 4;
 		    float * colors = new float[colorSize * vertexCount];
 		    int count = 0;
 		    for (int i = 0; i < vertexCount; ++i)
 		    {
-			    colors[count++] = aTexture->getColor().red;
-			    colors[count++] = aTexture->getColor().green;
-			    colors[count++] = aTexture->getColor().blue;
-			    if(colorSize == 4)
-			    {
-				    colors[count++] = aTexture->getAlpha();
-			    }
+                colors[count++] = 1.0f;
+			    colors[count++] = 1.0f;
+			    colors[count++] = 1.0f;
+                colors[count++] = 1.0f;
+
 		    }
         
 		    //If the foreground alpha isn't full, enable blending
-		    if(hasTransparency == true)
-		    {
-			    enableBlending();
-		    }
-        
+			enableBlending();   
             //Set the uvCoordinates of the texture.
             glEnableClientState(GL_TEXTURE_COORD_ARRAY);
             glTexCoordPointer(2, GL_FLOAT, 0, aTexCoordinates);
         
 		    //Enable the texture and bind it
             glEnable(GL_TEXTURE_2D);
-            glBindTexture(GL_TEXTURE_2D, aTexture->getID());
+            glBindTexture(GL_TEXTURE_2D, texture->getID());
         
 		    //Draw the texture
 		    drawPolygon(GL_TRIANGLE_STRIP, aVertices, vertexSize, vertexCount, colors, colorSize);
@@ -322,11 +322,47 @@ namespace OnLooker
             glDisable(GL_TEXTURE_2D);
         
 		    //If the foreground alpha isn't full, blending is enabled, disable it
-		    if(hasTransparency == true)
-		    {
-			    disableBlending();
-		    }
-	    }*/
+			disableBlending();
+	    }
+    }
+
+    unsigned int Renderer::loadTexture(std::string aTextureName)
+    {
+        //Check for reference
+        for(int i = 0; i < m_Textures.size(); i++)
+        {
+            if(m_Textures[i] != 0)
+            {
+                if(m_Textures[i]->getName() == aTextureName)
+                {
+                    m_Textures[i]->addReference();
+                    return i;
+                }
+            }
+        }
+
+        //If the texture didnt exist
+        m_Textures.push_back(new TextureReference());
+        int index = m_Textures.size() -1;
+        m_Textures.at(index)->load(aTextureName);
+        return index;
+    }
+
+    bool Renderer::unloadTexture(std::string aTextureName)
+    {
+        for(int i = 0; i < m_Textures.size(); i++)
+        {
+            if(m_Textures[i] != 0)
+            {
+                if(m_Textures[i]->getName() == aTextureName)
+                {
+                    m_Textures[i]->removeReference();
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     void Renderer::checkForErrors()
@@ -338,16 +374,16 @@ namespace OnLooker
             switch(error)
             {
             case GL_INVALID_ENUM:
-                    Debug::console->output("GL_INVALID_ENUM");
+                    Debug::console->output("GL_INVALID_ENUM\n");
                 break;
             case GL_INVALID_VALUE:
-                    Debug::console->output("GL_INVALID_VALUE");
+                    Debug::console->output("GL_INVALID_VALUE\n");
                 break;
             case GL_INVALID_OPERATION:
-                    Debug::console->output("GL_INVALID_OPERATION");
+                    Debug::console->output("GL_INVALID_OPERATION\n");
                 break;
             case GL_INVALID_FRAMEBUFFER_OPERATION:
-                    Debug::console->output("GL_INVALID_FRAMEBUFFER_OPERATION");
+                    Debug::console->output("GL_INVALID_FRAMEBUFFER_OPERATION\n");
                 break;
 
                 
@@ -357,5 +393,13 @@ namespace OnLooker
         }
     }
 
-    
+    Texture * Renderer::getTexture(unsigned int aID)
+    {
+        if(aID > m_Textures.size() -1)
+        {
+            Debug::console->output("Renderer::getTexture: ID out of range");
+            return 0;
+        }
+        return m_Textures[aID]->m_Texture;
+    }
 }

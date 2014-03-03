@@ -8,10 +8,13 @@
 
 #include "../../Libraries/OL_OpenGL.h"
 #include "OL_Color.h"
+#include <vector>
 
 namespace OnLooker
 {
+    class Mesh;
     class Texture;
+    class TextureReference;
     /*
     *   Class: Renderer
     *   Base Class: N/A
@@ -62,14 +65,16 @@ namespace OnLooker
         void drawPolygon(GLenum aRenderMode, float * aVertices, int aVertexSize, int aVertexCount);
         void drawPolygon(GLenum aRenderMode, float * aVertices, int aVertexSize, int aVertexCount, float * aColors, int aColorSize);
 
-        void drawTexture(Texture * aTexture, float x, float y, float aAngle = 0.0f);
-        void drawTexture(Texture * aTexture, float x, float y, float aWidth, float aHeight, float aAngle = 0.0f);
-        void drawTexture(Texture * aTexture, float * aTexCoordinates, float * aVertices);
+        void drawTexture(unsigned int aTextureID, float x, float y, float aAngle = 0.0f);
+        void drawTexture(unsigned int aTextureID, float x, float y, float aWidth, float aHeight, float aAngle = 0.0f);
+        void drawTexture(unsigned int aTextureID, float * aTexCoordinates, float * aVertices);
 
-        
-
+        unsigned int loadTexture(std::string aTextureName);
+        bool unloadTexture(std::string aTextureName);
 
         //Vertex Buffer
+        void renderMesh(Mesh * aMesh);
+
 
 
         void checkForErrors();
@@ -81,7 +86,8 @@ namespace OnLooker
         bool m_Initialized;
         Color m_BackgroundColor;
         Color m_ForegroundColor;
-
+        Texture * getTexture(unsigned int aID);
+        std::vector<TextureReference *> m_Textures;
 
     };
 }

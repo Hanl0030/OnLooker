@@ -3,6 +3,7 @@
 
 namespace OnLooker
 {
+    class Game;
     /*
     *   Class: Application
     *   Base Class: N/A
@@ -77,6 +78,7 @@ namespace OnLooker
         //If init went well this will be true
         bool m_Init;
         static Application * s_Instance;
+        Game * m_Game;
     };
 
 }

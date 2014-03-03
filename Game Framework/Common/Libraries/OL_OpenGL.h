@@ -4,6 +4,7 @@
 
 #include <glew.h>
 #include <glfw3.h>
+#include <SOIL.h>
 #include <FreeImage.h>
 
 #endif

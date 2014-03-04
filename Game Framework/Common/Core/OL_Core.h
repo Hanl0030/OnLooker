@@ -12,7 +12,11 @@
 #include "Window/OL_Application.h"
 #include "Window/OL_Input.h"
 #include "Renderer/OL_Renderer.h"
-
+#include "Renderer/OL_Shader.h"
+#include "Renderer/OL_VertexAttribute.h"
+#include "Renderer/OL_Color.h"
+#include "Renderer/OL_TextureReference.h"
+#include "Renderer/OL_Texture.h"
 namespace OnLooker
 {
 

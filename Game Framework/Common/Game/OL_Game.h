@@ -3,6 +3,9 @@
 
 namespace OnLooker
 {
+	class Shader;
+	class Color;
+	class TextureReference;
 
     class Game
     {
@@ -14,6 +17,17 @@ namespace OnLooker
         void render();
     private:
         unsigned int m_Texture;
+
+		unsigned int m_VBO;
+		unsigned int m_IBO;
+		Shader * m_Shader;
+		Shader * m_TextureShader;
+
+		Color * m_Color;
+
+		TextureReference * m_WaterTexture;
+		TextureReference * m_SandTexture;
+
     };
 
 

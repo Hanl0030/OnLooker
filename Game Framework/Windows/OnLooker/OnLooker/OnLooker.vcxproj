@@ -56,6 +56,12 @@
     <ClCompile Include="..\..\..\Common\Utilities\OL_Utilities.cpp" />
     <ClCompile Include="Source\OL_Main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Resources\Shaders\BasicShader.frag" />
+    <None Include="..\..\..\Resources\Shaders\BasicShader.vert" />
+    <None Include="..\..\..\Resources\Shaders\TextureShader.frag" />
+    <None Include="..\..\..\Resources\Shaders\TextureShader.vert" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0C676901-53F4-4AAA-BC4E-BC62F3BCF645}</ProjectGuid>
     <RootNamespace>OnLooker</RootNamespace>

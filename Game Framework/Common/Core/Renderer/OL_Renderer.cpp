@@ -181,7 +181,7 @@ namespace OnLooker
 	    vertices[6] = x;          vertices[7] = y + aHeight;
 
     
-	drawPolygon(aIsFilled ? GL_TRIANGLE_FAN : GL_LINE_LOOP, vertices, vertexSize, vertexCount);
+		drawPolygon(aIsFilled ? GL_TRIANGLE_FAN : GL_LINE_LOOP, vertices, vertexSize, vertexCount);
     }
 
     void Renderer::drawPolygon(GLenum aRenderMode, float * aVertices, int aVertexSize, int aVertexCount)
@@ -199,18 +199,18 @@ namespace OnLooker
 	    }
     
 	    //If the foreground alpha isn't full, enable blending
-	    if(m_ForegroundColor.alpha != 1.0f)
-	    {
+	    //if(m_ForegroundColor.alpha != 1.0f)
+	    ///{
 		    enableBlending();
-	    }
+	    //}
 	    //Draw the polygon
 	    drawPolygon(aRenderMode, aVertices, aVertexSize, aVertexCount, colors, colorSize);
     
 	    //If the foreground alpha isn't full, blending is enabled, disable it
-	    if(m_ForegroundColor.alpha != 1.0f)
-	    {
+	    //if(m_ForegroundColor.alpha != 1.0f)
+	    //{
 		    disableBlending();
-	    }
+	    //}
     }
     void Renderer::drawPolygon(GLenum aRenderMode, float * aVertices, int aVertexSize, int aVertexCount, float * aColors, int aColorSize)
     {
@@ -250,17 +250,17 @@ namespace OnLooker
 		    uvCoordinates[0] = texture->getMinU(); uvCoordinates[1] = texture->getMinV();
 		    uvCoordinates[2] = texture->getMaxU(); uvCoordinates[3] = texture->getMinV();
 		    uvCoordinates[4] = texture->getMaxU(); uvCoordinates[5] = texture->getMaxV();
-		    uvCoordinates[6] = texture->getMaxU(); uvCoordinates[7] = texture->getMaxV();
+		    uvCoordinates[6] = texture->getMinU(); uvCoordinates[7] = texture->getMaxV();
         
 		    //Set the vertices
-		    vertices[0] = 0.0f;           vertices[1] = 0.0f + aHeight;
-		    vertices[2] = 0.0f + aWidth;  vertices[3] = 0.0f + aHeight;
-		    vertices[4] = 0.0f;           vertices[5] = 0.0f;
-		    vertices[6] = 0.0f + aWidth; 	vertices[7] = 0.0f;
+		    vertices[0] = x;           vertices[1] = y;
+		    vertices[2] = x + aWidth;  vertices[3] = y;
+		    vertices[4] = x + aWidth;  vertices[5] = y + aHeight;
+		    vertices[6] = x; 		   vertices[7] = y + aHeight;
         
            
 
-            //Push the Matrix
+            /*//Push the Matrix
             glPushMatrix();
         
             //Translate the texture
@@ -273,13 +273,13 @@ namespace OnLooker
                 glTranslatef(aWidth/2, aHeight/2, 0.0f);
                 glRotatef(aAngle, 0.0f, 0.0f, 1.0f);
                 glTranslatef(-aWidth/2, -aHeight/2, 0.0f);
-            }
+            }*/
         
 		    //Draw the texture
             drawTexture(aTextureID, uvCoordinates, vertices);
         
             //Pop the Matrix
-            glPopMatrix();
+            //glPopMatrix();
         }
     }
 

@@ -43,6 +43,9 @@
     <Filter Include="Common\Utilities\FilePath">
       <UniqueIdentifier>{4e99e3e0-b086-4cad-bbb4-ef8d9bbb15b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{8994a220-7d0f-4588-8d13-cd4700f54318}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\OL_Main.h">
@@ -173,5 +176,19 @@
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_TextureReference.cpp">
       <Filter>Common\Core\Renderer</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Resources\Shaders\BasicShader.frag">
+      <Filter>Data</Filter>
+    </None>
+    <None Include="..\..\..\Resources\Shaders\BasicShader.vert">
+      <Filter>Data</Filter>
+    </None>
+    <None Include="..\..\..\Resources\Shaders\TextureShader.frag">
+      <Filter>Data</Filter>
+    </None>
+    <None Include="..\..\..\Resources\Shaders\TextureShader.vert">
+      <Filter>Data</Filter>
+    </None>
   </ItemGroup>
 </Project>

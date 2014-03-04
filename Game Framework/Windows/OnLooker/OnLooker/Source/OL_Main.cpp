@@ -64,6 +64,9 @@ namespace OnLooker
                 runExit();
                 return -1;
             }
+			//Renderer setup
+            Renderer::getInstance()->initialize(m_Window->getWindowWidth(),m_Window->getWindowHeight());
+
             if(Application::getInstance()->init() != true)
             {
                 //Something went wrong
@@ -76,8 +79,7 @@ namespace OnLooker
             Time::m_LastTime = Time::m_CurrentTime;
             Time::m_Delta = Time::m_CurrentTime - Time::m_LastTime;
 
-            //Renderer setup
-            Renderer::getInstance()->initialize(m_Window->getWindowWidth(),m_Window->getWindowHeight());
+            
             if(Renderer::getInstance()->isReadyInitalized() != true)
             {
                 Debug::console->output("Failure to initialize Renderer \n");

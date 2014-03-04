@@ -23,9 +23,23 @@ namespace OnLooker
             float u;
             float v;
         };
-        Position m_Position;
-        Color m_Color;
-        TexCoord m_TexCoords;
+		
+        Position position;
+        Color color;
+        TexCoord texCoords;
+
+		VertexAttribute();
+		VertexAttribute(float aX, float aY, float aRed, float aGreen, float aBlue, float aAlpha, float aU, float aV);
+		/*{
+			m_Position.x = aX;
+			m_Position.y = aY;
+			m_Color.red = aRed;
+			m_Color.green = aGreen;
+			m_Color.blue = aBlue;
+			m_Color.alpha = aAlpha;
+			m_TexCoords.u = aU;
+			m_TexCoords.v = aV;
+		}*/
         
     };
 

@@ -14,7 +14,7 @@ namespace OnLooker
     {
 
     }
-    bool TextureReference::load(std::string aFilename)
+    bool TextureReference::load(std::string aFilename, int aUnit, bool aUseUnit)
     {
         addReference();
 
@@ -40,6 +40,10 @@ namespace OnLooker
         unsigned int textureHandle = 0;
 
         glGenTextures(1, &textureHandle);
+		if(aUseUnit == true)
+		{
+			glActiveTexture(GL_TEXTURE0 + aUnit);
+		}
         glBindTexture(GL_TEXTURE_2D,textureHandle);
         glTexImage2D(GL_TEXTURE_2D,
                     0,
@@ -76,10 +80,10 @@ namespace OnLooker
         m_Texture->m_SourceWidth = m_Texture->m_FileWidth;
         m_Texture->m_SourceHeight = m_Texture->m_FileHeight;
 
-        m_Texture->m_MinU = m_Texture->m_SourceX / width;
-        m_Texture->m_MaxU = m_Texture->m_SourceY / width;
-        m_Texture->m_MinV = m_Texture->m_SourceWidth / height;
-        m_Texture->m_MaxV = m_Texture->m_SourceHeight / height;
+        m_Texture->m_MinU = 0.0f;//m_Texture->m_SourceX / width;
+        m_Texture->m_MaxU = 1.0f;//m_Texture->m_SourceY / width;
+        m_Texture->m_MinV = 0.0f;//m_Texture->m_SourceWidth / height;
+        m_Texture->m_MaxV = 1.0f;//m_Texture->m_SourceHeight / height;
 
         return true;
     }

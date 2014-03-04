@@ -12,7 +12,7 @@ namespace OnLooker
     public:
         TextureReference();
         ~TextureReference();
-        bool load(std::string aFilename);
+        bool load(std::string aFilename, int aUnit = 0, bool aUseUnit = false);
         std::string getName();
 
         void addReference();

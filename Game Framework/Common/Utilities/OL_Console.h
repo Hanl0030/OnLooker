@@ -37,6 +37,8 @@ namespace OnLooker
         */
         static void destroy();
 
+
+		//void outputString(std::string aMessage);
         /*
         *   Function: output
         *   Return Type: void
@@ -99,6 +101,9 @@ namespace OnLooker
         void createConsole();
         static Console * s_Instance;
         bool m_IsConsoleAllocated;
+
+		//std::string m_LastMessage;
+		
 
     };
 

@@ -26,6 +26,10 @@ namespace OnLooker
             s_Instance = 0;
         }
     }
+	//void outputString(std::string aMessage)
+	//{
+	
+	//}
 
     void Console::output(const char * aMessage, ...)
     {

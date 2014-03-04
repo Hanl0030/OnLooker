@@ -24,13 +24,13 @@ namespace OnLooker
 
     bool Shader::loadShaderProgram(string aShaderProgramName)
     {
-        string vertexShaderFilename = "../../Win32-Resources/Shaders/";
-        string fragmentShaderFilename = "../../Win32-Resources/Shaders/";
+		string vertexShaderFilename = FilePath::getInstance()->convertPathForShaders(aShaderProgramName);
+		string fragmentShaderFilename = FilePath::getInstance()->convertPathForShaders(aShaderProgramName);
         
-        vertexShaderFilename.append(aShaderProgramName);
+        //vertexShaderFilename.append(aShaderProgramName);
         vertexShaderFilename.append(".vert");
         
-        fragmentShaderFilename.append(aShaderProgramName);
+        //fragmentShaderFilename.append(aShaderProgramName);
         fragmentShaderFilename.append(".frag");
 
 

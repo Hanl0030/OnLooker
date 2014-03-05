@@ -120,6 +120,12 @@
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_TextureReference.h">
       <Filter>Common\Core\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\Renderer\OL_EShaderType.h">
+      <Filter>Common\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Utilities\OL_ConsoleMessage.h">
+      <Filter>Common\Utilities\Debug</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\OL_Main.cpp">
@@ -175,6 +181,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_TextureReference.cpp">
       <Filter>Common\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Utilities\OL_ConsoleMessage.cpp">
+      <Filter>Common\Utilities\Debug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

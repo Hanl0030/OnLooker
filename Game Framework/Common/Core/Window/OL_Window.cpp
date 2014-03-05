@@ -40,7 +40,7 @@ namespace OnLooker
         if(!glfwInit())
         {
             //Error
-            Debug::console->output("glfw failed to init \n");
+            Debug::console->outputFormat("glfw failed to init \n");
             destroy();
             return false;
         }
@@ -53,7 +53,7 @@ namespace OnLooker
 
         if(!m_Window)
         {
-            Debug::console->output("window failed to init \n");
+            Debug::console->outputFormat("window failed to init \n");
             destroy();
             return false;
         }
@@ -72,7 +72,7 @@ namespace OnLooker
         //Initialize glew
         if(glewInit() != GLEW_OK)
         {
-            Debug::console->output("glew failed to init \n");
+            Debug::console->outputFormat("glew failed to init \n");
             destroy();
             return false;
         }
@@ -114,7 +114,7 @@ namespace OnLooker
     void Window::m_ErrorCallback(int aError, const char * aDescription)
     {
         //TODO:Log the error using Debug.Log
-        Debug::console->output("Error %i: %c \n",aError,aDescription);
+        Debug::console->outputFormat("Error %i: %c \n",aError,aDescription);
     }
     
     void Window::m_KeyCallback(GLFWwindow * aWindow, int aKey, int aScanCode, int aAction, int aMods)

@@ -37,7 +37,7 @@ namespace OnLooker
     void Renderer::initialize(double aWindowWidth, double aWindowHeight)
     {
         
-        Debug::console->output("SetupContext-Begin-\n");
+        Debug::console->outputFormat("SetupContext-Begin-\n");
         glViewport(0,0,aWindowWidth,aWindowHeight);
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
@@ -52,7 +52,7 @@ namespace OnLooker
         m_Initialized = true;
 
         
-        Debug::console->output("SetupContext-End-\n");
+        Debug::console->outputFormat("SetupContext-End-\n");
     }
 
     void Renderer::clear()
@@ -374,16 +374,16 @@ namespace OnLooker
             switch(error)
             {
             case GL_INVALID_ENUM:
-                    Debug::console->output("GL_INVALID_ENUM\n");
+                    Debug::console->output("GL_INVALID_ENUM",true);
                 break;
             case GL_INVALID_VALUE:
-                    Debug::console->output("GL_INVALID_VALUE\n");
+                    Debug::console->output("GL_INVALID_VALUE",true);
                 break;
             case GL_INVALID_OPERATION:
-                    Debug::console->output("GL_INVALID_OPERATION\n");
+                    Debug::console->output("GL_INVALID_OPERATION",true);
                 break;
             case GL_INVALID_FRAMEBUFFER_OPERATION:
-                    Debug::console->output("GL_INVALID_FRAMEBUFFER_OPERATION\n");
+                    Debug::console->output("GL_INVALID_FRAMEBUFFER_OPERATION",true);
                 break;
 
                 
@@ -397,7 +397,7 @@ namespace OnLooker
     {
         if(aID > m_Textures.size() -1)
         {
-            Debug::console->output("Renderer::getTexture: ID out of range");
+            Debug::console->outputFormat("Renderer::getTexture: ID out of range");
             return 0;
         }
         return m_Textures[aID]->m_Texture;

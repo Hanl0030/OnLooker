@@ -1,6 +1,7 @@
 #ifndef OL_CONSOLE_H
 #define OL_CONSOLE_H
-
+#include <string>
+#include <vector>
 /*
 *   Filename: OL_Console.h
 *   Date Modified: 02/03/2014 by Nathan Hanlan
@@ -9,6 +10,7 @@
 
 namespace OnLooker
 {
+	class ConsoleMessage;
     /*
     *   Class: Console
     *   Base Class: N/A
@@ -37,8 +39,6 @@ namespace OnLooker
         */
         static void destroy();
 
-
-		//void outputString(std::string aMessage);
         /*
         *   Function: output
         *   Return Type: void
@@ -47,7 +47,7 @@ namespace OnLooker
         *   @... The arguments to output
         *   Date Modified: 02/03/2014 by Nathan Hanlan
         */
-        void output(const char * aMessage, ...);
+        void outputFormat(const char * aMessage, ...);
         /*
         *   Function: output
         *   Return Type: void
@@ -72,6 +72,9 @@ namespace OnLooker
         *   Date Modified: 02/03/2014 by Nathan Hanlan
         */
         void output(double aValue);
+
+
+		void output(std::string aMessage , bool rackOutputCount = true);
 
     private:
         /*
@@ -102,9 +105,16 @@ namespace OnLooker
         static Console * s_Instance;
         bool m_IsConsoleAllocated;
 
-		//std::string m_LastMessage;
-		
 
+		void clear();
+		void addMessage(std::string aMessage);
+		bool messageExists(std::string aMessage);
+		//std::string m_LastMessage;
+		int m_MessagesTracked;
+		std::vector<ConsoleMessage *> m_Messages;
+		ConsoleMessage * m_ActiveMessage;
+		std::string m_PreviousMessage;
+		
     };
 
 }

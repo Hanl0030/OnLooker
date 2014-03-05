@@ -15,6 +15,7 @@
     <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Output.h" />
     <ClInclude Include="..\..\..\Common\Core\OL_Core.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Color.h" />
+    <ClInclude Include="..\..\..\Common\Core\Renderer\OL_EShaderType.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Mesh.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Renderer.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Shader.h" />
@@ -30,6 +31,7 @@
     <ClInclude Include="..\..\..\Common\Libraries\OL_OpenGL.h" />
     <ClInclude Include="..\..\..\Common\OL_Common.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_Console.h" />
+    <ClInclude Include="..\..\..\Common\Utilities\OL_ConsoleMessage.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_Debug.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_FilePath.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_Utilities.h" />
@@ -50,6 +52,7 @@
     <ClCompile Include="..\..\..\Common\Core\Window\OL_Window.cpp" />
     <ClCompile Include="..\..\..\Common\Game\OL_Game.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Console.cpp" />
+    <ClCompile Include="..\..\..\Common\Utilities\OL_ConsoleMessage.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Debug.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_FilePath.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Time.cpp" />

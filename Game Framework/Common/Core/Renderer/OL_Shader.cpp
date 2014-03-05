@@ -70,7 +70,7 @@ namespace OnLooker
 			glGetProgramInfoLog(m_ShaderProgramHandle,1,0,log);
 
 
-            Debug::console->output(log);
+            Debug::console->outputFormat(log);
 
 			delete[] log;
 			m_ReadyToUse = false;
@@ -180,7 +180,7 @@ namespace OnLooker
 
 			glGetShaderInfoLog(handle,logLength,0,infoLog);
 
-            Debug::console->output(infoLog);
+            Debug::console->outputFormat(infoLog);
 			
 			delete[] infoLog;
 

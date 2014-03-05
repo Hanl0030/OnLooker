@@ -18,7 +18,7 @@ namespace OnLooker
         stream >> number;
         if(stream.fail())
         {
-            Debug::console->output("Failed to convert string to int");
+            Debug::console->outputFormat("Failed to convert string to int");
             return 0;
         }
 
@@ -32,7 +32,7 @@ namespace OnLooker
         stream >> number;
         if(stream.fail())
         {
-            Debug::console->output("Failed to convert string to int");
+            Debug::console->outputFormat("Failed to convert string to int");
             return 0;
         }
 
@@ -46,7 +46,7 @@ namespace OnLooker
         stream >> number;
         if(stream.fail())
         {
-            Debug::console->output("Failed to convert string to short");
+            Debug::console->outputFormat("Failed to convert string to short");
             return 0;
         }
 
@@ -60,7 +60,7 @@ namespace OnLooker
         stream >> number;
         if(stream.fail())
         {
-            Debug::console->output("Failed to convert string to short");
+            Debug::console->outputFormat("Failed to convert string to short");
             return 0;
         }
 
@@ -74,7 +74,7 @@ namespace OnLooker
         stream >> number;
         if(stream.fail())
         {
-            Debug::console->output("Failed to convert string to float");
+            Debug::console->outputFormat("Failed to convert string to float");
             return 0.0f;
         }
 
@@ -88,7 +88,7 @@ namespace OnLooker
         stream >> number;
         if(stream.fail())
         {
-            Debug::console->output("Failed to convert string to double");
+            Debug::console->outputFormat("Failed to convert string to double");
             return 0;
         }
 
@@ -221,7 +221,7 @@ namespace OnLooker
         ifstream readStream(filename);
 	    if(!readStream.is_open())
 	    {
-            Debug::console->output("Failed to open file");
+            Debug::console->outputFormat("Failed to open file");
             ofstream  writeStream(filename);
             writeStream << "Heres the file";
             writeStream.close();

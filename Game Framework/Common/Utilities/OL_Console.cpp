@@ -1,4 +1,6 @@
 #include "OL_Console.h"
+#include "OL_ConsoleMessage.h"
+#include <iostream>
 #include <stdio.h>
 #include <stdarg.h>
 
@@ -26,12 +28,7 @@ namespace OnLooker
             s_Instance = 0;
         }
     }
-	//void outputString(std::string aMessage)
-	//{
-	
-	//}
-
-    void Console::output(const char * aMessage, ...)
+    void Console::outputFormat(const char * aMessage, ...)
     {
         if(m_IsConsoleAllocated == false)
         {
@@ -51,7 +48,7 @@ namespace OnLooker
         {
             createConsole();
         }
-        printf("%f \n",aValue);
+        printf("Console: %f \n",aValue);
     }
     void Console::output(float aValue)
     {
@@ -59,7 +56,7 @@ namespace OnLooker
         {
             createConsole();
         }
-        printf("%f \n",aValue);
+        printf("Console: %f \n",aValue);
     }
     void Console::output(double aValue)
     {
@@ -67,12 +64,94 @@ namespace OnLooker
         {
             createConsole();
         }
-        printf("%f \n",aValue);
+        printf("Console: %f \n",aValue);
     }
+	void Console::output(std::string aMessage, bool aTrackOutputCount)
+	{
+		if(m_IsConsoleAllocated == false)
+        {
+            createConsole();
+        }
+		//If were tracking the input
+		if(aTrackOutputCount == true)
+		{
+			//Check to see if the message exists and set the active message
+			if(messageExists(aMessage) == true)
+			{
+				if(m_ActiveMessage != 0)
+				{
+					//output count
+					if(aMessage == m_PreviousMessage)
+					{
+						clear();
+						
+					}
+					m_ActiveMessage->addHit();
+					std::cout << "Console: " << aMessage << " [Count(" << m_ActiveMessage->getHitCount() << ").\n";
+					m_PreviousMessage = aMessage;
+				}
+				else
+				{
+					output(aMessage,false);
+				}
+			}
+			else
+			{
+				//add message output count
+				addMessage(aMessage);
+				if(aMessage == m_PreviousMessage)
+				{
+					clear();
+				}
+				std::cout << "Console: " << aMessage << " [Count(" << m_ActiveMessage->getHitCount() << ").\n";
+				m_PreviousMessage = aMessage;
+			}
+		}
+		else
+		{
+			std::cout << "Console: " << aMessage << "\n";
+		}
+	}
+	void Console::clear()
+	{
+#if WIN32
+		system("cls");
+#endif
+	}
+	void Console::addMessage(std::string aMessage)
+	{
+		if(aMessage == "")
+		{
+			return;
+		}
+		m_Messages.push_back(new ConsoleMessage(aMessage,m_MessagesTracked));
+		m_ActiveMessage = m_Messages[m_Messages.size() -1];
+		m_MessagesTracked++;
+	}
+
+	bool Console::messageExists(std::string aMessage)
+	{
+		//For all the messages
+		for(int i = 0; i < m_Messages.size(); i++)
+		{
+			//If the message is not null and is the same as the parameter return true
+			if(m_Messages[i] != 0)
+			{
+				if(m_Messages[i]->getMessage() == aMessage)
+				{
+					m_ActiveMessage = m_Messages[i];
+					return true;
+				}
+			}
+		}
+		//exit out false
+		return false;
+	}
 
     Console::Console()
     {
         m_IsConsoleAllocated = false;
+		m_MessagesTracked = 0;
     }
     Console::~Console()
     {

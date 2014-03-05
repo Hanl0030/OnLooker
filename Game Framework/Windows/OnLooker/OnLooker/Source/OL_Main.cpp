@@ -60,7 +60,7 @@ namespace OnLooker
             if(m_Window->createWindow() == false)
             {
                 //TODO: Debug Error
-                Debug::console->output("Failure to create window \n");
+                Debug::console->outputFormat("Failure to create window \n");
                 runExit();
                 return -1;
             }
@@ -70,7 +70,7 @@ namespace OnLooker
             if(Application::getInstance()->init() != true)
             {
                 //Something went wrong
-                Debug::console->output("Failure to initialize Application \n");
+                Debug::console->outputFormat("Failure to initialize Application \n");
                 runExit();
                 return -1;
             }
@@ -82,7 +82,7 @@ namespace OnLooker
             
             if(Renderer::getInstance()->isReadyInitalized() != true)
             {
-                Debug::console->output("Failure to initialize Renderer \n");
+                Debug::console->outputFormat("Failure to initialize Renderer \n");
                 runExit();
                 return -1;
             }

@@ -28,6 +28,8 @@ namespace OnLooker
 		TextureReference * m_WaterTexture;
 		TextureReference * m_SandTexture;
 
+		float m_Transparency;
+
     };
 
 

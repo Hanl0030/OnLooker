@@ -371,7 +371,7 @@ namespace OnLooker
 
         while(error != GL_NO_ERROR)
         {
-            switch(error)
+            /*switch(error)
             {
             case GL_INVALID_ENUM:
                     Debug::console->output("GL_INVALID_ENUM",true);
@@ -389,7 +389,7 @@ namespace OnLooker
                 
             }
 
-            error = glGetError();
+            error = glGetError();*/
         }
     }
 

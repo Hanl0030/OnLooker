@@ -46,6 +46,9 @@
     <Filter Include="Data">
       <UniqueIdentifier>{8994a220-7d0f-4588-8d13-cd4700f54318}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common\Libraries\LodePng">
+      <UniqueIdentifier>{b2ab0449-e0e4-451d-8aee-9f01ffe03141}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\OL_Main.h">
@@ -126,6 +129,9 @@
     <ClInclude Include="..\..\..\Common\Utilities\OL_ConsoleMessage.h">
       <Filter>Common\Utilities\Debug</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Common\Libraries\LodePNG\lodepng.h">
+      <Filter>Common\Libraries\LodePng</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\OL_Main.cpp">
@@ -184,6 +190,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Common\Utilities\OL_ConsoleMessage.cpp">
       <Filter>Common\Utilities\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Libraries\LodePNG\lodepng.cpp">
+      <Filter>Common\Libraries\LodePng</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

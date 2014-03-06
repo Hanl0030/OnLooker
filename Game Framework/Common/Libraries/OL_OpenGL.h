@@ -6,5 +6,6 @@
 #include <glfw3.h>
 #include <SOIL.h>
 #include <FreeImage.h>
+#include "LodePNG/lodepng.h"
 
 #endif

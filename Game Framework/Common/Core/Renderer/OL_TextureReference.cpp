@@ -26,9 +26,10 @@ namespace OnLooker
         std::string textureName = aFilename;
         aFilename = FilePath::getInstance()->convertPathForTextures(aFilename);
 
-
-        int width(0),height(0);
-        unsigned char * data = SOIL_load_image(aFilename.c_str(),&width,&height,0,SOIL_LOAD_RGBA);
+		unsigned char * data;
+        unsigned int width(0),height(0);
+        //unsigned char * data = SOIL_load_image(aFilename.c_str(),&width,&height,0,SOIL_LOAD_RGBA);
+		unsigned int error = lodepng_decode32_file(&data,&width,&height,aFilename.c_str());
 
         if(data == 0)
         {

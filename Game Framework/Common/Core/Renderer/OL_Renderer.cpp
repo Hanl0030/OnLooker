@@ -402,4 +402,29 @@ namespace OnLooker
         }
         return m_Textures[aID]->m_Texture;
     }
+
+
+	unsigned int Renderer::getMesh(std::string aMeshName)
+	{
+		//Search for mesh in list of meshes by name
+		//return handle to mesh(index in list)
+		return 2;
+	}
+	void Renderer::setMeshValue(unsigned int aLocation, float aMeshValue)
+	{
+		float ** mesh = new float *[3];
+		mesh[0] = 0;
+		mesh[1] = 0;
+		mesh[2] = new float(5.0);
+		//get mesh object at index (aLocation)
+
+		//if not valid return
+		if(mesh[aLocation] == 0)
+		{
+			Debug::console->output("Mesh not valid",false);
+			return;
+		}
+		//get the mesh object and set it's value to meshvalue
+		(*mesh[aLocation]) = aMeshValue;
+	}
 }

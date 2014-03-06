@@ -74,7 +74,10 @@ namespace OnLooker
 
         //Vertex Buffer
         void renderMesh(Mesh * aMesh);
+		
 
+		unsigned int getMesh(std::string aMeshName);
+		void setMeshValue(unsigned int aLocation, float aMeshValue);
 
 
         void checkForErrors();

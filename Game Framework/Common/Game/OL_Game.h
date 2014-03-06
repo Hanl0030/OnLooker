@@ -12,7 +12,7 @@ namespace OnLooker
     public:
         Game();
         ~Game();
-
+		void load();
         void update();
         void render();
     private:
@@ -29,6 +29,8 @@ namespace OnLooker
 		TextureReference * m_SandTexture;
 
 		float m_Transparency;
+
+		long double m_Counter;
 
     };
 

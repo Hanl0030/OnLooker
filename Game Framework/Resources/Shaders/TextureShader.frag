@@ -15,14 +15,20 @@ void main()
 
 	if(color1.a == 1.0)
 	{
-		gl_FragColor = color1;
+		//gl_FragColor = color2;
+		gl_FragColor = vec4(1.0,0.0,0.0,1.0);
 	}
-	else
+	else if(color1.a == 0.0)
 	{
 		//float translucency1 = float(1) - u_Translucency;
 		//color1 *= translucency1;
 		//color2 *= u_Translucency;
-		gl_FragColor = color1;
+		//gl_FragColor = color1;
+		gl_FragColor = vec4(0.0,1.0,0.0,1.0);
+	}
+	else
+	{
+		gl_FragColor = vec4(0.0,0.0,1.0,1.0);
 	}
 	
 	

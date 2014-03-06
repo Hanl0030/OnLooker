@@ -49,6 +49,9 @@ namespace OnLooker
             //TODO: Initialize Application
             m_Game = new Game();
 
+
+			m_Game->load();
+
             //Temp Code ***REMOVE***
             m_Init = true;
 

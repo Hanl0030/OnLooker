@@ -1,11 +1,28 @@
 #include "OL_Game.h"
 #include "../Utilities/OL_Utilities.h"
 #include "../Core/OL_Core.h"
+#include <math.h>
 
 namespace OnLooker
 {
     Game::Game()
     {
+		m_Counter = 0.0;
+		onLookerInit();
+    }
+    Game::~Game()
+    {
+        Renderer::getInstance()->unloadTexture("Bush.png");
+		if(m_Shader != 0)
+		{
+			delete m_Shader;
+			m_Shader = 0;
+		}
+    }
+
+	void Game::load()
+	{
+		Renderer::getInstance()->disableBlending();
 		m_Color = new Color(Colors::indigo());
 
         m_Texture = Renderer::getInstance()->loadTexture("Bush.png");
@@ -58,20 +75,16 @@ namespace OnLooker
 		
 
 		Renderer::getInstance()->checkForErrors();
-		
-    }
-    Game::~Game()
-    {
-        Renderer::getInstance()->unloadTexture("Bush.png");
-		if(m_Shader != 0)
-		{
-			delete m_Shader;
-			m_Shader = 0;
-		}
-    }
+	}
 
     void Game::update()
     {
+
+		//Debug::console->output((double)sin(m_Counter));
+		//Debug::console->output((double)m_Counter);
+		//m_Counter += genRandomNumber(0,25,6);
+
+
 		if(Input::getInstance()->getKey(KeyCode::F1))
 		{
 			m_Transparency += 0.05f;
@@ -90,6 +103,17 @@ namespace OnLooker
 			//Debug::console->output(Time::m_Delta);
 			//Debug::console->output(m_Transparency);
 		}
+		else if(Input::getInstance()->getKey(KeyCode::K))
+		{
+
+			//glGetUniformLocation(2,"someName");
+			//glUniform1f(2,30);
+
+			//unsigned int handleToMeshLocation = Renderer::getInstance()->getMesh("somemesh.obj");
+			//Renderer::getInstance()->setMeshValue(handleToMeshLocation,30);
+			//Renderer::getInstance()->setMeshValue(1,2);
+		}
+
     }
     void Game::render()
     {
@@ -133,7 +157,7 @@ namespace OnLooker
 
 		glBindBuffer(GL_ARRAY_BUFFER,0);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);*/
-		Renderer::getInstance()->disableBlending();
+		//Renderer::getInstance()->enableBlending(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 		Renderer::getInstance()->checkForErrors();
 
 		m_TextureShader->useThisShader();

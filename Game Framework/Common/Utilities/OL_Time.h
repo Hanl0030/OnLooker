@@ -23,7 +23,6 @@ namespace OnLooker
         //The time between frames
         static double m_Delta;
 
-
     private:
         //The current time
         static double m_CurrentTime;

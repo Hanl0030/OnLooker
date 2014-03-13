@@ -65,6 +65,11 @@ namespace OnLooker
         //GL_NEAREST - 8 Bit graphics
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); //GL_NEAREST / GL_LINEAR
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); //GL_NEAREST / GL_LINEAR
+
+
+		//the min filter is used whenever a surface is rendered with smaller dimensions that its corresponding texture
+		//the mag filter is used whenever the surface is bigger than the texture being applied
+
         
         //Unbind
         glBindTexture(GL_TEXTURE_2D,0);

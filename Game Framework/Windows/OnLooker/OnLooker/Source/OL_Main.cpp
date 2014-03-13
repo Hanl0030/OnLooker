@@ -75,6 +75,7 @@ namespace OnLooker
                 return -1;
             }
             //Setup Time Variables pre loop
+			
             Time::m_CurrentTime = Window::getTime();
             Time::m_LastTime = Time::m_CurrentTime;
             Time::m_Delta = Time::m_CurrentTime - Time::m_LastTime;
@@ -95,9 +96,11 @@ namespace OnLooker
             {
 
                 //Calculate delta
+				Time::m_LastTime = Time::m_CurrentTime;
                 Time::m_CurrentTime = Window::getTime();
-                Time::m_LastTime = Time::m_CurrentTime;
                 Time::m_Delta = Time::m_CurrentTime - Time::m_LastTime;
+
+				Debug::console->output(Time::m_Delta);
                 //Clear 
                 Renderer::getInstance()->clear();
                 //Game Update/Render

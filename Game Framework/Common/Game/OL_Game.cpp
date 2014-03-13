@@ -32,11 +32,17 @@ namespace OnLooker
 		m_TextureShader->loadShaderProgram("TextureShader");
 		m_TextureShader->useThisShader();
 
+		m_MaskShader = new Shader();
+		m_MaskShader->loadShaderProgram("TextureMask");
+		m_MaskShader->useThisShader();
+
 		m_Texture[0] = new TextureReference();
 		m_Texture[1] = new TextureReference();
+		m_Texture[2] = new TextureReference();
 
-		m_Texture[0]->load("testMap.png",0,true);
-		m_Texture[1]->load("awesome.png",1,true);
+		m_Texture[0]->load("awesome.png",0,true);
+		m_Texture[1]->load("testMap.png",1,true);
+		m_Texture[2]->load("growmap.png" ,2,true);
 		
 		
 		int numberOfAttributes = 4;
@@ -63,12 +69,18 @@ namespace OnLooker
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER,sizeof(indices),indices,GL_STATIC_DRAW);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-		GLint aTexOne = glGetUniformLocation(m_TextureShader->getShaderProgramHandle(), "u_Texture1");
+		m_MaskShader->useThisShader();
+
+		GLint aTexOne = glGetUniformLocation(m_MaskShader->getShaderProgramHandle(), "u_Texture1");
 		glUniform1i(aTexOne, 0);
 		Renderer::getInstance()->checkForErrors();
-		GLint aTexTwo = glGetUniformLocation(m_TextureShader->getShaderProgramHandle(), "u_Texture2");
+		GLint aTexTwo = glGetUniformLocation(m_MaskShader->getShaderProgramHandle(), "u_Texture2");
 		glUniform1i(aTexTwo, 1);
 		Renderer::getInstance()->checkForErrors();
+
+		GLint aMask = glGetUniformLocation(m_MaskShader->getShaderProgramHandle(), "u_Mask");
+		glUniform1i(aMask, 2);
+
 		m_Transparency = 1.0f;
 
 		
@@ -159,7 +171,7 @@ namespace OnLooker
 		//Renderer::getInstance()->enableBlending(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 		Renderer::getInstance()->checkForErrors();
 
-		m_TextureShader->useThisShader();
+		m_MaskShader->useThisShader();
 		glBindBuffer(GL_ARRAY_BUFFER,m_VBO);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,m_IBO);
 
@@ -188,7 +200,7 @@ namespace OnLooker
 
 
 		GLint u_TexOffset = glGetUniformLocation(m_TextureShader->getShaderProgramHandle(),"u_TexOffset");
-		glUniform2f(u_TexOffset,0.5f,0.5f);
+		glUniform2f(u_TexOffset,0.0f,0.0f);
 		
 
 		glActiveTexture(GL_TEXTURE0 + 0);
@@ -197,6 +209,9 @@ namespace OnLooker
 
 		glActiveTexture(GL_TEXTURE0 + 1);
 		glBindTexture(GL_TEXTURE_2D, m_Texture[1]->m_Texture->getID());
+
+		glActiveTexture(GL_TEXTURE0 + 2);
+		glBindTexture(GL_TEXTURE_2D, m_Texture[2]->m_Texture->getID());
 		
 		Renderer::getInstance()->checkForErrors();
 		glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_SHORT,0);

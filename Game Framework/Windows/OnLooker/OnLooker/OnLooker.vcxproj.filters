@@ -208,5 +208,11 @@
     <None Include="..\..\..\Resources\Shaders\TextureShader.vert">
       <Filter>Data</Filter>
     </None>
+    <None Include="..\..\..\Resources\Shaders\TextureMask.frag">
+      <Filter>Data</Filter>
+    </None>
+    <None Include="..\..\..\Resources\Shaders\TextureMask.vert">
+      <Filter>Data</Filter>
+    </None>
   </ItemGroup>
 </Project>

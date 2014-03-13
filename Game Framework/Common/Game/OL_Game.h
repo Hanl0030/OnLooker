@@ -21,10 +21,11 @@ namespace OnLooker
 		unsigned int m_IBO;
 		Shader * m_Shader;
 		Shader * m_TextureShader;
+		Shader * m_MaskShader;
 
 		Color * m_Color;
 
-		TextureReference * m_Texture[2];
+		TextureReference * m_Texture[3];
 
 		float m_Transparency;
 

@@ -16,7 +16,6 @@ namespace OnLooker
         void update();
         void render();
     private:
-        unsigned int m_Texture;
 
 		unsigned int m_VBO;
 		unsigned int m_IBO;
@@ -25,8 +24,7 @@ namespace OnLooker
 
 		Color * m_Color;
 
-		TextureReference * m_WaterTexture;
-		TextureReference * m_SandTexture;
+		TextureReference * m_Texture[2];
 
 		float m_Transparency;
 

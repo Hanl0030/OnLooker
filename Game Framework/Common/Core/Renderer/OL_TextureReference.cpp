@@ -27,9 +27,9 @@ namespace OnLooker
         aFilename = FilePath::getInstance()->convertPathForTextures(aFilename);
 
 		unsigned char * data;
-        unsigned int width(0),height(0);
-        //unsigned char * data = SOIL_load_image(aFilename.c_str(),&width,&height,0,SOIL_LOAD_RGBA);
-		unsigned int error = lodepng_decode32_file(&data,&width,&height,aFilename.c_str());
+        int width(0),height(0);
+        data = SOIL_load_image(aFilename.c_str(),&width,&height,0,SOIL_LOAD_RGBA);
+		//unsigned int error = lodepng_decode32_file(&data,&width,&height,aFilename.c_str());
 
         if(data == 0)
         {
@@ -59,8 +59,8 @@ namespace OnLooker
         
         //GL_CLAMP - Does not repeat, just stretches lines
         //GL_REPEAT - repeats.. checker board pattern
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); //GL_CLAMP / GL_REPEAT
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT); //GL_CLAMP / GL_REPEAT
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); //GL_CLAMP / GL_CLAMP_TO_EDGE / GL_REPEAT / GL_MIRRORED_REPEAT
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT); //GL_CLAMP / GL_CLAMP_TO_EDGE GL_REPEAT / GL_MIRRORED_REPEAT
         //GL_LINEAR - Smooth
         //GL_NEAREST - 8 Bit graphics
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); //GL_NEAREST / GL_LINEAR

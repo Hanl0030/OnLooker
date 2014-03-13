@@ -25,7 +25,6 @@ namespace OnLooker
 		Renderer::getInstance()->disableBlending();
 		m_Color = new Color(Colors::indigo());
 
-        m_Texture = Renderer::getInstance()->loadTexture("Bush.png");
 		m_Shader = new Shader();
 		m_Shader->loadShaderProgram("BasicShader");
 	
@@ -33,11 +32,11 @@ namespace OnLooker
 		m_TextureShader->loadShaderProgram("TextureShader");
 		m_TextureShader->useThisShader();
 
-		m_WaterTexture = new TextureReference();
-		m_SandTexture = new TextureReference();
+		m_Texture[0] = new TextureReference();
+		m_Texture[1] = new TextureReference();
 
-		m_WaterTexture->load("testMap.png",1,true);
-		m_SandTexture->load("awesome.png",0,true);
+		m_Texture[0]->load("testMap.png",0,true);
+		m_Texture[1]->load("awesome.png",1,true);
 		
 		
 		int numberOfAttributes = 4;
@@ -68,7 +67,7 @@ namespace OnLooker
 		glUniform1i(aTexOne, 0);
 		Renderer::getInstance()->checkForErrors();
 		GLint aTexTwo = glGetUniformLocation(m_TextureShader->getShaderProgramHandle(), "u_Texture2");
-		glUniform1i(aTexOne, 1);
+		glUniform1i(aTexTwo, 1);
 		Renderer::getInstance()->checkForErrors();
 		m_Transparency = 1.0f;
 
@@ -187,16 +186,17 @@ namespace OnLooker
 		}
 		Renderer::getInstance()->checkForErrors();
 
-		GLint transparency = glGetUniformLocation(m_TextureShader->getShaderProgramHandle(), "u_Translucency");
-		glUniform1f(transparency, m_Transparency);
+
+		GLint u_TexOffset = glGetUniformLocation(m_TextureShader->getShaderProgramHandle(),"u_TexOffset");
+		glUniform2f(u_TexOffset,0.5f,0.5f);
 		
 
 		glActiveTexture(GL_TEXTURE0 + 0);
-		glBindTexture(GL_TEXTURE_2D, m_SandTexture->m_Texture->getID());
-		
+		glBindTexture(GL_TEXTURE_2D, m_Texture[0]->m_Texture->getID());
+									 
 
 		glActiveTexture(GL_TEXTURE0 + 1);
-		glBindTexture(GL_TEXTURE_2D, m_WaterTexture->m_Texture->getID());
+		glBindTexture(GL_TEXTURE_2D, m_Texture[1]->m_Texture->getID());
 		
 		Renderer::getInstance()->checkForErrors();
 		glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_SHORT,0);

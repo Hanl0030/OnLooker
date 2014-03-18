@@ -26,6 +26,7 @@ namespace OnLooker
 		Color * m_Color;
 
 		TextureReference * m_Texture[3];
+		unsigned int m_TextureHandles[2];
 
 		float m_Transparency;
 

@@ -92,6 +92,7 @@ namespace OnLooker
 
     void Renderer::enableBlending(GLenum aSourceBlending, GLenum aDestinationBlending )
     {
+		glDepthMask(GL_FALSE);
         glEnable(GL_BLEND);
         glBlendFunc(aSourceBlending, aDestinationBlending);
     }

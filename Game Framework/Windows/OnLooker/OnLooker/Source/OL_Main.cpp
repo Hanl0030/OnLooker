@@ -99,8 +99,6 @@ namespace OnLooker
 				Time::m_LastTime = Time::m_CurrentTime;
                 Time::m_CurrentTime = Window::getTime();
                 Time::m_Delta = Time::m_CurrentTime - Time::m_LastTime;
-
-				Debug::console->output(Time::m_Delta);
                 //Clear 
                 Renderer::getInstance()->clear();
                 //Game Update/Render

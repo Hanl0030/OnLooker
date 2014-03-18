@@ -49,6 +49,9 @@
     <Filter Include="Common\Libraries\LodePng">
       <UniqueIdentifier>{b2ab0449-e0e4-451d-8aee-9f01ffe03141}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common\Core\Renderer\Mesh">
+      <UniqueIdentifier>{d622e5ff-3f4a-46b3-9a54-48af3d45d222}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\OL_Main.h">
@@ -132,6 +135,12 @@
     <ClInclude Include="..\..\..\Common\Libraries\LodePNG\lodepng.h">
       <Filter>Common\Libraries\LodePng</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_IReference.h">
+      <Filter>Common\Core\Base-Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Object.h">
+      <Filter>Common\Core\Base-Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\OL_Main.cpp">
@@ -193,6 +202,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Common\Libraries\LodePNG\lodepng.cpp">
       <Filter>Common\Libraries\LodePng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Core\Base Objects\OL_Object.cpp">
+      <Filter>Common\Core\Base-Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Core\Base Objects\OL_IReference.cpp">
+      <Filter>Common\Core\Base-Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

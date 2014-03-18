@@ -31,6 +31,8 @@ namespace OnLooker
         {
             return Color(aRed/255.0f,aGreen/255.0f,aBlue/255.0f,aAlpha/255.0f);
         }
+		//(127.0f,255.0f,212.0f)
+		//0.49, 1, 0.83
         static inline Color setRGBNonNormalizedToNormalized(float aRed, float aGreen, float aBlue)
         {
             return Color(aRed/255.0f,aGreen/255.0f,aBlue/255.0f,1.0f);

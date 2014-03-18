@@ -12,6 +12,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Component.h" />
+    <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_IReference.h" />
+    <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Object.h" />
     <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Output.h" />
     <ClInclude Include="..\..\..\Common\Core\OL_Core.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Color.h" />
@@ -40,6 +42,8 @@
     <ClInclude Include="Source\OL_Main.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Common\Core\Base Objects\OL_IReference.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Base Objects\OL_Object.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Color.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Mesh.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Renderer.cpp" />

@@ -148,7 +148,7 @@ namespace OnLooker
     }
     const char * Input::getType()
     {
-        return "Input";
+        return OL_INDESTRUCTIBLE_OBJECT;
     }
     
     void Input::handleStates()

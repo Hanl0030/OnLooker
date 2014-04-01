@@ -3,8 +3,14 @@
 
 #include <string>
 
+//Any class that is not to be deallocated via Object::Destroy must return a type of __INDESTRUCTIBLE_OBJECT__
+//This is maining for classes that are singleton design or managers of some sort.
+extern const char * OL_INDESTRUCTIBLE_OBJECT;
+
+
 namespace OnLooker
 {
+
 	/*
 	*   Class: Object
 	*   Base Class: None
@@ -60,6 +66,30 @@ namespace OnLooker
 		*   Date Modified: 18/3/2014 by Nathan Hanlan
 		*/
 		static Object * destroy(Object * aObject);
+
+		/*
+		*   Function: getName
+		*   Return Type: char *
+		*   Description: Returns the name of the object
+		*   Parameters: none
+		*   Date Modified: 1/4/2014 by Nathan Hanlan
+		*/
+		char * getName();
+		/*
+		*   Function: setName
+		*   Return Type: void
+		*   Description: Returns the name of the object
+		*   Parameters: @char * aName - The name value to set
+		*   Date Modified: 1/4/2014 by Nathan Hanlan
+		*/
+		void setName(char * aName);
+	protected:
+		char * m_Name;
+		int getReferenceID();
+	private:
+		static int nextRefrenceID();
+		static int s_ReferenceID;
+		int m_ReferenceID;
 	};
 }
 

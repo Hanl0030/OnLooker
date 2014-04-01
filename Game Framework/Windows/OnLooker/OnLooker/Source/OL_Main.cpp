@@ -14,7 +14,6 @@
 
 int main()
 {
-    
     int mainRunCode = OnLooker::Main::getInstance()->run();
     OnLooker::Main::destroy();
 
@@ -118,7 +117,7 @@ namespace OnLooker
 
         const char * Main::getType()
         {
-            return "Main";
+            return OL_INDESTRUCTIBLE_OBJECT;
         }
 
         //This function gets called before run is left

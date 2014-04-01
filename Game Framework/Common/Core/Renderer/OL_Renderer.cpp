@@ -396,9 +396,12 @@ namespace OnLooker
     }
     const char * Renderer::getType()
     {
-        return "Renderer";
+        return OL_INDESTRUCTIBLE_OBJECT;
     }
-
+	std::string Renderer::toString()
+	{
+		return "";
+	}
     Texture * Renderer::getTexture(unsigned int aID)
     {
         if(aID > m_Textures.size() -1)

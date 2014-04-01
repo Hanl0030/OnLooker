@@ -2,9 +2,8 @@
 #define OL_MATH_H
 
 #include <math.h>
-#include "OL_Vector2.h"
-#include "OL_Vector3.h"
-#include "OL_Matrix3x3.h"
+#include "Vector.h"
+#include "Matrix.h"
 
 namespace OnLooker
 {

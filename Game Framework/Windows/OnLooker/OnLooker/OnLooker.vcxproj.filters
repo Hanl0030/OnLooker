@@ -52,6 +52,12 @@
     <Filter Include="Common\Core\Renderer\Mesh">
       <UniqueIdentifier>{d622e5ff-3f4a-46b3-9a54-48af3d45d222}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common\Core\Renderer\Mesh\Texture">
+      <UniqueIdentifier>{084e3d50-1a79-4f24-85e0-b6008d4e2433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Core\Renderer\Mesh\Shader">
+      <UniqueIdentifier>{4fb00559-47a8-464d-b2f6-d57ef4e83adc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\OL_Main.h">
@@ -144,13 +150,10 @@
     <ClInclude Include="..\..\..\Common\Math\OL_Math.h">
       <Filter>Common\Math</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Common\Math\OL_Vector2.h">
+    <ClInclude Include="..\..\..\Common\Math\Matrix.h">
       <Filter>Common\Math</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Common\Math\OL_Vector3.h">
-      <Filter>Common\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Common\Math\OL_Matrix3x3.h">
+    <ClInclude Include="..\..\..\Common\Math\Vector.h">
       <Filter>Common\Math</Filter>
     </ClInclude>
   </ItemGroup>
@@ -221,13 +224,10 @@
     <ClCompile Include="..\..\..\Common\Core\Base Objects\OL_IReference.cpp">
       <Filter>Common\Core\Base-Objects</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Common\Math\OL_Vector2.cpp">
+    <ClCompile Include="..\..\..\Common\Math\Matrix.cpp">
       <Filter>Common\Math</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Common\Math\OL_Vector3.cpp">
-      <Filter>Common\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Common\Math\OL_Matrix3x3.cpp">
+    <ClCompile Include="..\..\..\Common\Math\Vector.cpp">
       <Filter>Common\Math</Filter>
     </ClCompile>
   </ItemGroup>

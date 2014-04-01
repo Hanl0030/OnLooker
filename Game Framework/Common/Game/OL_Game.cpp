@@ -208,7 +208,7 @@ namespace OnLooker
     }
     const char * Game::getType()
     {
-        return "Game";
+        return OL_INDESTRUCTIBLE_OBJECT;
     }
 
 }

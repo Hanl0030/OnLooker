@@ -244,11 +244,6 @@ namespace OnLooker
     {
         return (col + row * maxRows);
     }
-    Vector2 elementOf(int index, int maxRows)
-    {
-        int x = index % maxRows;
-        int y = index - x / maxRows;
-        return Vector2(x,y);
-    }
+
 
 }

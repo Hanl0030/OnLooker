@@ -32,10 +32,9 @@
     <ClInclude Include="..\..\..\Common\Game\OL_Game.h" />
     <ClInclude Include="..\..\..\Common\Libraries\LodePNG\lodepng.h" />
     <ClInclude Include="..\..\..\Common\Libraries\OL_OpenGL.h" />
+    <ClInclude Include="..\..\..\Common\Math\Matrix.h" />
     <ClInclude Include="..\..\..\Common\Math\OL_Math.h" />
-    <ClInclude Include="..\..\..\Common\Math\OL_Matrix3x3.h" />
-    <ClInclude Include="..\..\..\Common\Math\OL_Vector2.h" />
-    <ClInclude Include="..\..\..\Common\Math\OL_Vector3.h" />
+    <ClInclude Include="..\..\..\Common\Math\Vector.h" />
     <ClInclude Include="..\..\..\Common\OL_Common.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_Console.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_ConsoleMessage.h" />
@@ -61,9 +60,8 @@
     <ClCompile Include="..\..\..\Common\Core\Window\OL_Window.cpp" />
     <ClCompile Include="..\..\..\Common\Game\OL_Game.cpp" />
     <ClCompile Include="..\..\..\Common\Libraries\LodePNG\lodepng.cpp" />
-    <ClCompile Include="..\..\..\Common\Math\OL_Matrix3x3.cpp" />
-    <ClCompile Include="..\..\..\Common\Math\OL_Vector2.cpp" />
-    <ClCompile Include="..\..\..\Common\Math\OL_Vector3.cpp" />
+    <ClCompile Include="..\..\..\Common\Math\Matrix.cpp" />
+    <ClCompile Include="..\..\..\Common\Math\Vector.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Console.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_ConsoleMessage.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Debug.cpp" />

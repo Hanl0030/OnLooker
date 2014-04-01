@@ -153,7 +153,7 @@ namespace OnLooker
     }
     const char * Window::getType()
     {
-        return "Window";
+        return OL_INDESTRUCTIBLE_OBJECT;
     }
 
 	/*Window::Window()

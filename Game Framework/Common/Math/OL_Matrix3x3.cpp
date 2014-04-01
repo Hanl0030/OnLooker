@@ -4,6 +4,16 @@
 namespace OnLooker
 {
 
+	const int m11 = 0;
+	const int m12 = 1;
+	const int m13 = 2;
+	const int m21 = 3;
+	const int m22 = 4;
+	const int m23 = 5;
+	const int m31 = 6;
+	const int m32 = 7;
+	const int m33 = 8;
+
     Matrix3x3::Matrix3x3()
     {
 
@@ -126,23 +136,10 @@ namespace OnLooker
         aMatrixB.getMatrix(matB);
         aResult.getMatrix(matResult);
 
-        //matResult[0] = matA[0] * matB[0] + matA[3] * matB[1] + matA[6] * matB[2];
-        //matResult[3] = matA[0] * matB[3] + matA[3]
-        double sum;
-        int index, alpha, beta;
+		matResult[0] = matA[m11] * matB[m11] + matA[m12] * matB[m21] + matA[m13] * matB[m31];		matResult[1] = matA[m11] * matB[m12] + matA[m12] * matB[m22] + matA[m13] * matB[m32];	matResult[2] = matA[m11] * matB[m13] + matA[m12] * matB[m23] + matA[m13] * matB[m33];
+        matResult[0] = matA[m21] * matB[m11] + matA[m22] * matB[m21] + matA[m23] * matB[m31];		matResult[1] = matA[m21] * matB[m12] + matA[m22] * matB[m22] + matA[m23] * matB[m32];	matResult[2] = matA[m21] * matB[m13] + matA[m22] * matB[m23] + matA[m23] * matB[m33];
+		matResult[0] = matA[m31] * matB[m11] + matA[m32] * matB[m21] + matA[m33] * matB[m31];		matResult[1] = matA[m31] * matB[m12] + matA[m32] * matB[m22] + matA[m33] * matB[m32];	matResult[2] = matA[m31] * matB[m13] + matA[m32] * matB[m23] + matA[m33] * matB[m33];
 
-        for(index = 0; index < 3; index ++)
-        {
-            for(alpha = 0; alpha < 3; alpha++)
-            {
-                sum = 0.0f;
-                for(beta = 0; beta < 3; beta++)
-                {
-                    sum += matB[index + beta*3] * matA[alpha*3 + beta];
-                }
-                matResult[index + alpha*3] = (float)sum;
-            }
-        }
         for(int i = 0; i < 9; i++)
         {
             aResult.set(i,matResult[i]);

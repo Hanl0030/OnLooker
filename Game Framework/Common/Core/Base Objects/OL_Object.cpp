@@ -14,7 +14,7 @@ namespace OnLooker
 
 
 	Object * Object::destroy(Object * aObject)
-	{
+	{ 
 		if(aObject != 0)
 		{
 			delete aObject;

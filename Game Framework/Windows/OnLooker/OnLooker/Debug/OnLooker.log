@@ -1,9 +1,152 @@
-﻿Build started 01/04/2014 7:47:25 AM.
-     1>Project "C:\Users\Nathan\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\OnLooker\OnLooker.vcxproj" on node 2 (Clean target(s)).
-     1>_PrepareForClean:
-         Deleting file "Debug\OnLooker.lastbuildstate".
-     1>Done Building Project "C:\Users\Nathan\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\OnLooker\OnLooker.vcxproj" (Clean target(s)).
+﻿Build started 4/1/2014 1:24:01 PM.
+     1>Project "C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\OnLooker\OnLooker.vcxproj" on node 2 (build target(s)).
+     1>PrepareForBuild:
+         Creating directory "C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\Debug\".
+       InitializeBuildStatus:
+         Creating "Debug\OnLooker.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\..\Common\Core\Base Objects\OL_IReference.cpp" "..\..\..\Common\Core\Base Objects\OL_Object.cpp" ..\..\..\Common\Core\Renderer\OL_Color.cpp ..\..\..\Common\Core\Renderer\OL_Mesh.cpp ..\..\..\Common\Core\Renderer\OL_Renderer.cpp ..\..\..\Common\Core\Renderer\OL_Shader.cpp ..\..\..\Common\Core\Renderer\OL_Texture.cpp ..\..\..\Common\Core\Renderer\OL_VertexAttribute.cpp ..\..\..\Common\Core\Renderer\TextureManager.cpp ..\..\..\Common\Core\Renderer\OL_TextureReference.cpp ..\..\..\Common\Core\Window\OL_Application.cpp ..\..\..\Common\Core\Window\OL_Input.cpp ..\..\..\Common\Core\Window\OL_Window.cpp ..\..\..\Common\Game\OL_Game.cpp ..\..\..\Common\Libraries\LodePNG\lodepng.cpp ..\..\..\Common\Math\OL_Matrix3x3.cpp ..\..\..\Common\Math\OL_Vector2.cpp ..\..\..\Common\Math\OL_Vector3.cpp ..\..\..\Common\Utilities\OL_Console.cpp ..\..\..\Common\Utilities\OL_ConsoleMessage.cpp ..\..\..\Common\Utilities\OL_Debug.cpp ..\..\..\Common\Utilities\OL_FilePath.cpp ..\..\..\Common\Utilities\OL_Time.cpp ..\..\..\Common\Utilities\OL_Utilities.cpp Source\OL_Main.cpp
+         OL_Main.cpp
+         OL_Utilities.cpp
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_math.h(11): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\utilities\ol_utilities.cpp(164): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\utilities\ol_utilities.cpp(251): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\utilities\ol_utilities.cpp(251): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         OL_Time.cpp
+         OL_FilePath.cpp
+         OL_Debug.cpp
+         OL_ConsoleMessage.cpp
+         OL_Console.cpp
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\utilities\ol_console.cpp(135): warning C4018: '<' : signed/unsigned mismatch
+         OL_Vector3.cpp
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_math.h(11): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector3.cpp(178): warning C4804: '-' : unsafe use of type 'bool' in operation
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector3.cpp(178): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector3.cpp(239): warning C4172: returning address of local variable or temporary
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector3.cpp(243): warning C4172: returning address of local variable or temporary
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector3.cpp(247): warning C4172: returning address of local variable or temporary
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector3.cpp(251): warning C4172: returning address of local variable or temporary
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector3.cpp(255): warning C4172: returning address of local variable or temporary
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector3.cpp(259): warning C4172: returning address of local variable or temporary
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector3.cpp(263): warning C4172: returning address of local variable or temporary
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector3.cpp(267): warning C4172: returning address of local variable or temporary
+         OL_Vector2.cpp
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_math.h(11): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector2.cpp(159): warning C4172: returning address of local variable or temporary
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector2.cpp(163): warning C4172: returning address of local variable or temporary
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector2.cpp(167): warning C4172: returning address of local variable or temporary
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector2.cpp(171): warning C4172: returning address of local variable or temporary
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector2.cpp(175): warning C4172: returning address of local variable or temporary
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_vector2.cpp(179): warning C4172: returning address of local variable or temporary
+         OL_Matrix3x3.cpp
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_math.h(11): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_matrix3x3.cpp(244): warning C4804: '-' : unsafe use of type 'bool' in operation
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_matrix3x3.cpp(244): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+         lodepng.cpp
+         OL_Game.cpp
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\game\ol_game.cpp(85): warning C4482: nonstandard extension used: enum 'OnLooker::KeyCode' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\game\ol_game.cpp(93): warning C4482: nonstandard extension used: enum 'OnLooker::KeyCode' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\game\ol_game.cpp(103): warning C4482: nonstandard extension used: enum 'OnLooker::KeyCode' used in qualified name
+         OL_Window.cpp
+         OL_Input.cpp
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(35): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(41): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(65): warning C4482: nonstandard extension used: enum 'OnLooker::KeyCode' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(69): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(69): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(80): warning C4482: nonstandard extension used: enum 'OnLooker::KeyCode' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(84): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(92): warning C4482: nonstandard extension used: enum 'OnLooker::KeyCode' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(96): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(104): warning C4482: nonstandard extension used: enum 'OnLooker::MouseCode' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(108): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(108): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(119): warning C4482: nonstandard extension used: enum 'OnLooker::MouseCode' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(123): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(131): warning C4482: nonstandard extension used: enum 'OnLooker::MouseCode' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(135): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(158): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(160): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(162): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(164): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(169): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(171): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(173): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(175): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(187): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(191): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(198): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(202): warning C4482: nonstandard extension used: enum 'OnLooker::KeyState' used in qualified name
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(207): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(208): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\window\ol_input.cpp(212): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+         OL_Application.cpp
+         OL_TextureReference.cpp
+         TextureManager.cpp
+         OL_VertexAttribute.cpp
+         OL_Texture.cpp
+         OL_Shader.cpp
+         Generating Code...
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\renderer\ol_shader.cpp(104): warning C4715: 'OnLooker::Shader::useThisShader' : not all control paths return a value
+         Compiling...
+         OL_Renderer.cpp
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\math\ol_math.h(11): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\renderer\ol_renderer.cpp(42): warning C4244: 'argument' : conversion from 'double' to 'GLsizei', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\renderer\ol_renderer.cpp(42): warning C4244: 'argument' : conversion from 'double' to 'GLsizei', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\renderer\ol_renderer.cpp(86): warning C4244: 'argument' : conversion from 'float' to 'GLsizei', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\renderer\ol_renderer.cpp(86): warning C4244: 'argument' : conversion from 'float' to 'GLsizei', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\renderer\ol_renderer.cpp(86): warning C4244: 'argument' : conversion from 'float' to 'GLint', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\renderer\ol_renderer.cpp(86): warning C4244: 'argument' : conversion from 'float' to 'GLint', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\renderer\ol_renderer.cpp(168): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\renderer\ol_renderer.cpp(169): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\renderer\ol_renderer.cpp(239): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\renderer\ol_renderer.cpp(239): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\renderer\ol_renderer.cpp(334): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\hanl0030\documents\github\onlooker\game framework\common\core\renderer\ol_renderer.cpp(355): warning C4018: '<' : signed/unsigned mismatch
+         OL_Mesh.cpp
+         OL_Color.cpp
+         OL_Object.cpp
+         OL_IReference.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\Debug\OnLooker.exe" /NOLOGO opengl32.lib glfw3.lib glew32.lib FreeImage.lib SOIL.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\OnLooker.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\Debug\OnLooker.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\Debug\OnLooker.lib" /MACHINE:X86 Debug\OL_IReference.obj
+         Debug\OL_Object.obj
+         Debug\OL_Color.obj
+         Debug\OL_Mesh.obj
+         Debug\OL_Renderer.obj
+         Debug\OL_Shader.obj
+         Debug\OL_Texture.obj
+         Debug\OL_VertexAttribute.obj
+         Debug\TextureManager.obj
+         Debug\OL_TextureReference.obj
+         Debug\OL_Application.obj
+         Debug\OL_Input.obj
+         Debug\OL_Window.obj
+         Debug\OL_Game.obj
+         Debug\lodepng.obj
+         Debug\OL_Matrix3x3.obj
+         Debug\OL_Vector2.obj
+         Debug\OL_Vector3.obj
+         Debug\OL_Console.obj
+         Debug\OL_ConsoleMessage.obj
+         Debug\OL_Debug.obj
+         Debug\OL_FilePath.obj
+         Debug\OL_Time.obj
+         Debug\OL_Utilities.obj
+         Debug\OL_Main.obj
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>SOIL.lib(image_DXT.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'SOIL.lib(image_DXT.obj)' or at 'C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\Debug\vc100.pdb'; linking object as if no debug info
+     1>SOIL.lib(image_helper.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'SOIL.lib(image_helper.obj)' or at 'C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\Debug\vc100.pdb'; linking object as if no debug info
+     1>SOIL.lib(SOIL.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'SOIL.lib(SOIL.obj)' or at 'C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\Debug\vc100.pdb'; linking object as if no debug info
+     1>SOIL.lib(stb_image_aug.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'SOIL.lib(stb_image_aug.obj)' or at 'C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\Debug\vc100.pdb'; linking object as if no debug info
+         OnLooker.vcxproj -> C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\Debug\OnLooker.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\Debug\OnLooker.exe;#1" /manifest Debug\OnLooker.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\OnLooker.unsuccessfulbuild".
+         Touching "Debug\OnLooker.lastbuildstate".
+     1>Done Building Project "C:\Users\hanl0030\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\OnLooker\OnLooker.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.02
+Time Elapsed 00:00:12.94

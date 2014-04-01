@@ -2,6 +2,7 @@
 #define OL_WINDOW_H
 
 #include <string>
+#include "../Base Objects/OL_Object.h"
 
 struct GLFWwindow;
 
@@ -14,7 +15,7 @@ namespace OnLooker
     *   and handling input from the window.
     *   Date Modified: 02/03/2014 by Nathan Hanlan
     */
-    class Window
+    class Window : public Object
     {
         //Methods
     public:
@@ -129,6 +130,8 @@ namespace OnLooker
         *   Date Modified: 02/03/2014 by Nathan Hanlan
         */
         void swapBuffers();
+
+        const char * getType();
 
 
         //Methods

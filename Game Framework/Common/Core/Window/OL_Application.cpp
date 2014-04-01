@@ -73,6 +73,11 @@ namespace OnLooker
             }
         }
 
+        const char * Application::getType()
+        {
+            return "Application";
+        }
+
         
 
 }

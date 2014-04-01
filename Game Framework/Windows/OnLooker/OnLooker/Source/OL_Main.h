@@ -25,7 +25,7 @@ namespace OnLooker
     *   Description: The entry point of the program.
     *   Date Modified: 25/02/2014 by Nathan Hanlan
     */
-    class Main
+    class Main : public Object
     {
         //Methods
     public:
@@ -55,6 +55,7 @@ namespace OnLooker
         */
         int run();
 
+        const char * getType();
 
 		
 

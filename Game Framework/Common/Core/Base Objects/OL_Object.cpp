@@ -22,4 +22,9 @@ namespace OnLooker
 		}
 		return aObject;
 	}
+
+    std::string Object::toString()
+    {
+        return "";
+    }
 }

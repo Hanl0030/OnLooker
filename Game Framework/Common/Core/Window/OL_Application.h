@@ -1,6 +1,8 @@
 #ifndef OL_APPLICATION_H
 #define OL_APPLICATION_H
 
+#include "../Base Objects/OL_Object.h"
+
 namespace OnLooker
 {
     class Game;
@@ -10,7 +12,7 @@ namespace OnLooker
     *   Description: The application is what will handle a large portion of the game engine data
     *   Date Modified: 25/02/2014 by Nathan Hanlan
     */
-    class Application
+    class Application : public Object
     {
         //Methods
     public:
@@ -48,6 +50,8 @@ namespace OnLooker
         *   Date Modified: 25/02/2014 by Nathan Hanlan
         */
         void onIdle();
+
+        const char * getType();
 
 
         //Methods

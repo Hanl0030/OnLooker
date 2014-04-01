@@ -1,5 +1,6 @@
 #include "OL_Renderer.h"
 #include "../../Utilities/OL_Utilities.h"
+#include "../../Math/OL_Math.h"
 #include "OL_TextureReference.h"
 #include "OL_Texture.h"
 
@@ -164,8 +165,8 @@ namespace OnLooker
 	    int count = 0;
 	    for (float i = 0; i < 359.99f; i+= rotationAmount)
 	    {
-		    vertices[count++] = x + (cosf((M_PI * i / 180.0)) * aRadius);
-            vertices[count++] = y + (sinf((M_PI * i / 180.0)) * aRadius);
+		    vertices[count++] = x + (cosf((PI * i / 180.0)) * aRadius);
+            vertices[count++] = y + (sinf((PI * i / 180.0)) * aRadius);
 	    }
     
 	    drawPolygon(aIsFilled ? GL_TRIANGLE_FAN : GL_LINE_LOOP, vertices, vertexSize, vertexCount);
@@ -392,6 +393,10 @@ namespace OnLooker
 
             error = glGetError();*/
         }
+    }
+    const char * Renderer::getType()
+    {
+        return "Renderer";
     }
 
     Texture * Renderer::getTexture(unsigned int aID)

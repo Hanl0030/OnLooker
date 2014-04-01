@@ -8,6 +8,9 @@
 *             - Added Includes for OL_Window.h and OL_Application.h
 */
 
+#include "Base Objects/OL_Object.h"
+#include "Base Objects/OL_IReference.h"
+#include "Base Objects/OL_Output.h"
 #include "Window/OL_Window.h"
 #include "Window/OL_Application.h"
 #include "Window/OL_Input.h"

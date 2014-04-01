@@ -5,7 +5,7 @@
 #include <sstream>
 #include <stdlib.h>
 #include <time.h>
-
+#include "../Math/OL_Math.h"
 using namespace std;
 
 namespace OnLooker
@@ -238,6 +238,17 @@ namespace OnLooker
 	    }
 
         return contents;
+    }
+
+    int getIndexOf(int col, int row, int maxRows)
+    {
+        return (col + row * maxRows);
+    }
+    Vector2 elementOf(int index, int maxRows)
+    {
+        int x = index % maxRows;
+        int y = index - x / maxRows;
+        return Vector2(x,y);
     }
 
 }

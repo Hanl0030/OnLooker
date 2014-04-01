@@ -146,6 +146,10 @@ namespace OnLooker
     {
         return m_MouseY;
     }
+    const char * Input::getType()
+    {
+        return "Input";
+    }
     
     void Input::handleStates()
     {

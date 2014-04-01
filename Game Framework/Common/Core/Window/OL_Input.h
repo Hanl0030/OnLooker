@@ -1,6 +1,7 @@
 #ifndef OL_INPUT_H
 #define OL_INPUT_H
 
+#include "../Base Objects/OL_Object.h"
 #include "OL_KeyDef.h"
 
 namespace OnLooker
@@ -9,7 +10,7 @@ namespace OnLooker
     class Main;
 
 
-    class Input
+    class Input : public Object
     {
     public:
         static Input * getInstance();
@@ -25,6 +26,8 @@ namespace OnLooker
         float getMouseY();
         //mouse scroll coming soon
         //float getMouseScroll();
+
+        const char * getType();
 
     private:
         Input();

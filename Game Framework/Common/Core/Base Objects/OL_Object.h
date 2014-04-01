@@ -1,6 +1,8 @@
 #ifndef OL_OBJECT_H
 #define OL_OBJECT_H
 
+#include <string>
+
 namespace OnLooker
 {
 	/*
@@ -27,7 +29,7 @@ namespace OnLooker
 		*   Parameters: None
 		*   Date Modified: 18/3/2014 by Nathan Hanlan
 		*/
-		~Object();
+		virtual ~Object();
 
 		/*
 		*   Function: getType
@@ -38,6 +40,17 @@ namespace OnLooker
 		*   Date Modified: 18/3/2014 by Nathan Hanlan
 		*/
 		virtual const char * getType() = 0;
+
+        /*
+        *   Function: toString
+		*   Return Type: std::string
+		*   Description: This function is to be overridden by any class that inherits Object
+		*	and is to return a properly formatted string of the object's data
+		*   Parameters: None
+		*   Date Modified: 18/3/2014 by Nathan Hanlan
+        */
+        virtual std::string toString();
+
 		/*
 		*   Function: destroy
 		*   Return Type: Object

@@ -206,4 +206,9 @@ namespace OnLooker
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
 
     }
+    const char * Game::getType()
+    {
+        return "Game";
+    }
+
 }

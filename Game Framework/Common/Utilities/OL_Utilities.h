@@ -6,10 +6,11 @@
 #include "OL_Console.h"
 #include "OL_FilePath.h"
 
-const int M_PI = 3.14159265358979;
+
 
 namespace OnLooker
 {
+    class Vector2;
     /*
     *   Function: convertStringToInt
     *   Return Type: int
@@ -142,6 +143,9 @@ namespace OnLooker
     *   Date Modified: 23/02/2014 by Nathan Hanlan
     */
     std::string loadCompleteFile(const char* filename);
+
+    int getIndexOf(int col, int row, int maxRows);
+    Vector2 elementOf(int index, int maxRows);
 }
 
 

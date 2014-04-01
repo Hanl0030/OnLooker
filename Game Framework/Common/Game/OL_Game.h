@@ -1,13 +1,15 @@
 #ifndef OL_GAME_H
 #define OL_GAME_H
 
+#include "../Core/Base Objects/OL_Object.h"
+
 namespace OnLooker
 {
 	class Shader;
 	class Color;
 	class TextureReference;
 
-    class Game
+    class Game : public Object
     {
     public:
         Game();
@@ -15,6 +17,8 @@ namespace OnLooker
 		void load();
         void update();
         void render();
+
+        const char * getType();
     private:
 
 		unsigned int m_VBO;

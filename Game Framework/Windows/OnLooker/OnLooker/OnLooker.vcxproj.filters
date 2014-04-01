@@ -141,6 +141,18 @@
     <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Object.h">
       <Filter>Common\Core\Base-Objects</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Common\Math\OL_Math.h">
+      <Filter>Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Math\OL_Vector2.h">
+      <Filter>Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Math\OL_Vector3.h">
+      <Filter>Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Math\OL_Matrix3x3.h">
+      <Filter>Common\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\OL_Main.cpp">
@@ -208,6 +220,15 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Common\Core\Base Objects\OL_IReference.cpp">
       <Filter>Common\Core\Base-Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Math\OL_Vector2.cpp">
+      <Filter>Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Math\OL_Vector3.cpp">
+      <Filter>Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Math\OL_Matrix3x3.cpp">
+      <Filter>Common\Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

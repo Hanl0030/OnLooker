@@ -151,6 +151,10 @@ namespace OnLooker
     {
         glfwSwapBuffers(m_Window);
     }
+    const char * Window::getType()
+    {
+        return "Window";
+    }
 
 	/*Window::Window()
 	{

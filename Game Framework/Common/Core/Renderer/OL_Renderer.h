@@ -6,6 +6,8 @@
 *   Comments: v1.0.0 Added Renderer Class
 */
 
+
+#include "../Base Objects/OL_Object.h"
 #include "../../Libraries/OL_OpenGL.h"
 #include "OL_Color.h"
 #include <vector>
@@ -23,7 +25,7 @@ namespace OnLooker
     *   Follows the singleton design pattern
     *   Date Modified: 02/03/2014 by Nathan Hanlan
     */
-    class Renderer
+    class Renderer : public Object
     {
     public:
         static Renderer * getInstance();
@@ -81,6 +83,8 @@ namespace OnLooker
 
 
         void checkForErrors();
+
+        const char * getType();
     private:
         Renderer();
         ~Renderer();

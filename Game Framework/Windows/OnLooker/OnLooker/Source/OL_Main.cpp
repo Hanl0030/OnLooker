@@ -116,6 +116,11 @@ namespace OnLooker
             return 0;
         }
 
+        const char * Main::getType()
+        {
+            return "Main";
+        }
+
         //This function gets called before run is left
         void Main::runExit()
         {

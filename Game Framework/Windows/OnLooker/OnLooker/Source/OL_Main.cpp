@@ -60,7 +60,7 @@ namespace OnLooker
             {
                 //TODO: Debug Error
                 Debug::console->outputFormat("Failure to create window \n");
-                runExit();
+                onExit();
                 return -1;
             }
 			//Renderer setup
@@ -70,7 +70,7 @@ namespace OnLooker
             {
                 //Something went wrong
                 Debug::console->outputFormat("Failure to initialize Application \n");
-                runExit();
+                onExit();
                 return -1;
             }
             //Setup Time Variables pre loop
@@ -83,7 +83,7 @@ namespace OnLooker
             if(Renderer::getInstance()->isReadyInitalized() != true)
             {
                 Debug::console->outputFormat("Failure to initialize Renderer \n");
-                runExit();
+                onExit();
                 return -1;
             }
 
@@ -111,7 +111,7 @@ namespace OnLooker
                 m_Window->pollEvents();
             }
 
-            runExit();
+            onExit();
             return 0;
         }
 
@@ -121,7 +121,7 @@ namespace OnLooker
         }
 
         //This function gets called before run is left
-        void Main::runExit()
+        void Main::onExit()
         {
             Application::getInstance()->destroy();
 

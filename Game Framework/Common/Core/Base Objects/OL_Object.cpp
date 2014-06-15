@@ -4,7 +4,6 @@ const char * OL_INDESTRUCTIBLE_OBJECT = "__INDESTRUCTIBLE_OBJECT__";
 
 namespace OnLooker
 {
-	
 
 	int Object::s_ReferenceID = 0;
 
@@ -15,7 +14,7 @@ namespace OnLooker
 
 	Object::~Object()
 	{
-
+        
 	}
 
 

@@ -58,6 +58,9 @@
     <Filter Include="Common\Core\Renderer\Mesh\Shader">
       <UniqueIdentifier>{4fb00559-47a8-464d-b2f6-d57ef4e83adc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Library">
+      <UniqueIdentifier>{13ee468c-aa00-464a-a51e-b1da9d5d01ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\OL_Main.h">

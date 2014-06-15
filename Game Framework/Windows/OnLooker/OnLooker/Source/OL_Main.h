@@ -79,7 +79,7 @@ namespace OnLooker
         ~Main();
         
 
-        void runExit();
+        void onExit();
 
 
         //Member Variables

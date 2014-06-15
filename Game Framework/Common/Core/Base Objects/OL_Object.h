@@ -10,7 +10,6 @@ extern const char * OL_INDESTRUCTIBLE_OBJECT;
 
 namespace OnLooker
 {
-
 	/*
 	*   Class: Object
 	*   Base Class: None

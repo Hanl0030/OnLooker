@@ -15,6 +15,9 @@
     <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_IReference.h" />
     <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Object.h" />
     <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Output.h" />
+    <ClInclude Include="..\..\..\Common\Core\Memory\Allocator.h" />
+    <ClInclude Include="..\..\..\Common\Core\Memory\OL_Memory.h" />
+    <ClInclude Include="..\..\..\Common\Core\Memory\PoolAllocator.h" />
     <ClInclude Include="..\..\..\Common\Core\OL_Core.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Color.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_EShaderType.h" />
@@ -47,6 +50,8 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\Common\Core\Base Objects\OL_IReference.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Base Objects\OL_Object.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Memory\OL_Memory.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Memory\PoolAllocator.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Color.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Mesh.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Renderer.cpp" />

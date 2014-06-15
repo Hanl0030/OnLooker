@@ -20,6 +20,10 @@
 #include "Renderer/OL_Color.h"
 #include "Renderer/OL_TextureReference.h"
 #include "Renderer/OL_Texture.h"
+#include "Memory/Allocator.h"
+#include "Memory/PoolAllocator.h"
+#include "Memory/OL_Memory.h"
+
 namespace OnLooker
 {
 

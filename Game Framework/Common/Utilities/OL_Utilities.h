@@ -6,10 +6,43 @@
 #include "OL_Console.h"
 #include "OL_FilePath.h"
 
+#include <iostream>
+#include <string>
+
 
 
 namespace OnLooker
 {
+    #define loop(X) for(int i = 0; i < X; i++)
+
+    inline bool inBounds(const float & aValue,const float & aLower,const float & aHigher)
+    {
+        if(aValue >= aLower && aValue <= aHigher)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    inline bool inBounds(const int & aValue,const int & aLower,const int & aHigher)
+    {
+        if(aValue >= aLower && aValue <= aHigher)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    inline void output(std::string aMsg)
+    {
+        std::cout << aMsg.c_str() << std::endl;
+    }
+    inline void log(std::string aMsg)
+    {
+        std::cout << "[Debug] " << aMsg.c_str() << std::endl;
+    }
+
+
     class Vector2;
     /*
     *   Function: convertStringToInt

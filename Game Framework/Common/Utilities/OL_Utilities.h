@@ -5,7 +5,7 @@
 #include "OL_Debug.h"
 #include "OL_Console.h"
 #include "OL_FilePath.h"
-
+#include "OL_String.h"
 #include <iostream>
 #include <string>
 

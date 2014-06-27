@@ -58,9 +58,6 @@
     <Filter Include="Common\Core\Renderer\Mesh\Shader">
       <UniqueIdentifier>{4fb00559-47a8-464d-b2f6-d57ef4e83adc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Library">
-      <UniqueIdentifier>{13ee468c-aa00-464a-a51e-b1da9d5d01ab}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Common\Core\Memory">
       <UniqueIdentifier>{523032f8-c95c-4471-a5b6-054d3e3df33e}</UniqueIdentifier>
     </Filter>
@@ -171,6 +168,9 @@
     <ClInclude Include="..\..\..\Common\Core\Memory\PoolAllocator.h">
       <Filter>Common\Core\Memory</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Common\Utilities\OL_String.h">
+      <Filter>Common\Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\OL_Main.cpp">
@@ -250,6 +250,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Common\Core\Memory\PoolAllocator.cpp">
       <Filter>Common\Core\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Utilities\OL_String.cpp">
+      <Filter>Common\Utilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -122,7 +122,7 @@ namespace OnLooker
                 new(&objectArray[i])T;
             }
 
-            return p;
+            return objectArray;
         }
         template<class T> void deallocateArray(T * aArray)
         {

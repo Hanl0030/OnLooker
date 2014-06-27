@@ -46,6 +46,7 @@ namespace OnLooker
         */
         ~Window();
 
+
        
         /*
         *   Function: createWindow

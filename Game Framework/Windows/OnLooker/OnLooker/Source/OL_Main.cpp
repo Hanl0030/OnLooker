@@ -2,7 +2,7 @@
 #include "../../../../Common/Libraries/OL_OpenGL.h"
 #include <iostream>
 
-
+//#include "../../../../Common/Core/OL_Core.h"
 
 
 /*
@@ -16,22 +16,24 @@
 
 int main()
 {
+    OnLooker::MemoryManager::instance();
     int mainRunCode = OnLooker::Main::getInstance()->run();
     OnLooker::Main::destroy();
+    OnLooker::MemoryManager::destroy();
 
     return mainRunCode;
 }
 
 namespace OnLooker
 {
+        
         Main * Main::s_Instance = 0;
         Main * Main::getInstance()
         {
             if(s_Instance == 0)
             {
-                s_Instance = new Main();
+                s_Instance = Memory::instantiate<Main>();//new Main();
             }
-
             return s_Instance;
         }
 
@@ -39,8 +41,9 @@ namespace OnLooker
         {
             if(s_Instance != 0)
             {
-                delete s_Instance;
-                s_Instance = 0;
+                //delete s_Instance;
+                //s_Instance = 0;
+                s_Instance = Memory::destroy<Main>(s_Instance);
             }
         }
 
@@ -58,6 +61,10 @@ namespace OnLooker
         {
             //Create Window
             m_Window = new Window(1024,768,"OnLooker v3.0");
+
+            //m_Window = Memory::instantiate<Window>(); 
+            
+
             if(m_Window->createWindow() == false)
             {
                 //TODO: Debug Error

@@ -80,6 +80,11 @@ namespace OnLooker
             return MemoryManager::instance()->instantiate<T>();
         }
         template<class T>
+        T * instantiate(int aSize)
+        {
+            return MemoryManager::instance()->instantiate<T>(aSize);
+        }
+        template<class T>
         T * destroy(void * aPtr)
         {
             return MemoryManager::instance()->destroy<T>(aPtr);
@@ -107,6 +112,19 @@ namespace OnLooker
             }
             return allocator->allocate<T>();
         }
+
+        template<class T>
+        T * instantiate(int aSize)
+        {
+            int size = sizeof(T) * aSize;
+            PoolAllocator * allocator = getAllocator(size);
+            if(allocator == nullptr)
+            {
+                //Bad Size
+                return nullptr;
+            }
+            return allocator->allocateArray<T>(aSize);
+        }
         
         //Get the allocator of the proper size and deallocate for the object T
         //the ptr is returned as is if it was null or invalid allocator
@@ -122,6 +140,19 @@ namespace OnLooker
                 return (T*)aPtr;
             }
             allocator->deallocate<T>(aPtr);
+            return nullptr;
+        }
+        template<class T>
+        T * destroyArray(void * aPtr,int aSize)
+        {
+            int size = sizeof(T) * aSize;
+            PoolAllocator * allocator = getAllocator(size);
+            if(allocator == nullptr || aPtr == nullptr)
+            {
+                //Bad Size
+                return (T*)aPtr;
+            }
+            allocator->deallocateArray<T>(aPtr);
             return nullptr;
         }
         

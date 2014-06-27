@@ -1,11 +1,39 @@
-﻿Build started 14/06/2014 10:10:28 PM.
-     1>Project "C:\Users\Nathan\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\OnLooker\OnLooker.vcxproj" on node 2 (Clean target(s)).
-     1>_PrepareForClean:
-         Deleting file "Debug\OnLooker.lastbuildstate".
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppClean.targets(75,5): warning : The process cannot access the file 'C:\USERS\NATHAN\DOCUMENTS\GITHUB\ONLOOKER\GAME FRAMEWORK\WINDOWS\ONLOOKER\DEBUG\ONLOOKER.EXE' because it is being used by another process.
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppClean.targets(75,5): warning : The process cannot access the file 'C:\Users\Nathan\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\Debug\OnLooker.exe' because it is being used by another process.
-     1>Done Building Project "C:\Users\Nathan\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\OnLooker\OnLooker.vcxproj" (Clean target(s)).
+﻿Build started 14/06/2014 10:47:36 PM.
+     1>Project "C:\Users\Nathan\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\OnLooker\OnLooker.vcxproj" on node 2 (Build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\OnLooker.unsuccessfulbuild".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\Common\Core\Memory\OL_Memory.cpp ..\..\..\Common\Core\Memory\PoolAllocator.cpp ..\..\..\Common\Core\Window\OL_Window.cpp ..\..\..\Common\Game\OL_Game.cpp ..\..\..\Common\Utilities\OL_String.cpp Source\OL_Main.cpp
+         OL_String.cpp
+     1>c:\users\nathan\documents\github\onlooker\game framework\common\utilities\ol_string.h(44): warning C4172: returning address of local variable or temporary
+     1>c:\users\nathan\documents\github\onlooker\game framework\common\core\memory\allocator.h(114): error C3861: 'allocate': identifier not found
+                 c:\users\nathan\documents\github\onlooker\game framework\common\core\memory\ol_memory.h(126) : see reference to function template instantiation 'T *OnLooker::Allocator::allocateArray<T>(OnLooker::u32)' being compiled
+                 with
+                 [
+                     T=char
+                 ]
+                 c:\users\nathan\documents\github\onlooker\game framework\common\core\memory\ol_memory.h(85) : see reference to function template instantiation 'T *OnLooker::MemoryManager::instantiate<T>(int)' being compiled
+                 with
+                 [
+                     T=char
+                 ]
+                 c:\users\nathan\documents\github\onlooker\game framework\common\utilities\ol_string.cpp(355) : see reference to function template instantiation 'T *OnLooker::Memory::instantiate<char>(int)' being compiled
+                 with
+                 [
+                     T=char
+                 ]
+         Generating Code...
+         Compiling...
+         OL_Memory.cpp
+     1>c:\users\nathan\documents\github\onlooker\game framework\common\utilities\ol_string.h(44): warning C4172: returning address of local variable or temporary
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         OL_Main.cpp
+         OL_Game.cpp
+         OL_Window.cpp
+         PoolAllocator.cpp
+     1>Done Building Project "C:\Users\Nathan\Documents\GitHub\OnLooker\Game Framework\Windows\OnLooker\OnLooker\OnLooker.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.03
+Time Elapsed 00:00:01.18

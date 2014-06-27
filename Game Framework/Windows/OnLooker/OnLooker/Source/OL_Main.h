@@ -91,6 +91,8 @@ namespace OnLooker
         static Main * s_Instance;
         Window * m_Window;
 
+
+        friend PoolAllocator;
     };
 }
 

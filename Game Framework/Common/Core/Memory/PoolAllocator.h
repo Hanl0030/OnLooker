@@ -45,6 +45,25 @@ namespace OnLooker
             return tObj;
         }
         template<class T>
+        inline T * allocate(int aSize)
+        {
+            //Make sure the free list exists
+            ASSERT(m_FreeList != nullptr);
+            if(m_FreeList == nullptr)
+            {
+                return nullptr;
+            }
+            void ** arrayStart = m_FreeList;
+            void * index = arrayStart[0];
+            for(int i = 0; i < aSize; i++)
+            {
+                index = allocate<T>();
+                index = (void*)((uptr)index + aObjectSize);
+            }
+
+
+        }
+        template<class T>
         inline void deallocate(void * p)
         {
             //Make sure the address is valid

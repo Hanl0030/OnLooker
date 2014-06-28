@@ -10,6 +10,7 @@
 namespace OnLooker
 {
     class Main;
+    class Application;
     /*
     *   Class: Time
     *   Base Class: N/A
@@ -21,15 +22,23 @@ namespace OnLooker
     {
     public:
         //The time between frames
-        static double m_Delta;
-
+        static float delta();
+        static float fixedDelta();
+        static float startTime();
     private:
-        //The current time
-        static double m_CurrentTime;
-        //The last time
-        static double m_LastTime;
+        static float m_Delta;
+        static float m_CurrentTime;
+        static float m_LastTime;
+
+        static float m_FixedDelta;
+        static float m_FixedCurrentTime;
+        static float m_FixedLastTime;
+
+        static float m_StartTime;
 
 
+
+        friend Application;
         friend Main;
     };
 

@@ -222,6 +222,9 @@
     <ClInclude Include="..\..\..\Common\Core\Reflection\OL_Interface.h">
       <Filter>Common\Core\Reflection</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Common\Utilities\OL_UniqueNumberGenerator.h">
+      <Filter>Common\Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\OL_Main.cpp">
@@ -331,6 +334,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Common\Core\Reflection\OL_Interface.cpp">
       <Filter>Common\Core\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Utilities\OL_UniqueNumberGenerator.cpp">
+      <Filter>Common\Utilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

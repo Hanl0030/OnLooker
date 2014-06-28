@@ -27,6 +27,7 @@ namespace OnLooker
                 INPUT,
                 INPUT_LISTENER,
                 WINDOW,
+                UNIQUE_NUMBER_GENERATOR,
                 
             };
         }

@@ -9,16 +9,16 @@ namespace OnLooker
         m_Window = 0;
         m_WindowWidth = 1024;
         m_WindowHeight = 768;
-        m_WindowName = "Default Window";
+        m_WindowTitle = "Default Window";
         m_Allocated = false;
     }
     
-    Window::Window(int aWidth, int aHeight, std::string aWindowName)
+    Window::Window(int aWidth, int aHeight, String aWindowName)
     {
         m_Window = 0;
         m_WindowWidth = aWidth;
         m_WindowHeight = aHeight;
-        m_WindowName = aWindowName;
+        m_WindowTitle = aWindowName;
         m_Allocated = false;
     }
     Window::~Window()
@@ -28,12 +28,12 @@ namespace OnLooker
             destroy();
         }
     }
-    void Window::onCreate(int aWidth, int aHeight, std::string aWindowName)
+    void Window::onCreate(int aWidth, int aHeight, String aWindowName)
     {
         m_Window = 0;
         m_WindowWidth = aWidth;
         m_WindowHeight = aHeight;
-        m_WindowName = aWindowName;
+        m_WindowTitle = aWindowName;
     }
        
 
@@ -55,7 +55,7 @@ namespace OnLooker
         glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
-        m_Window = glfwCreateWindow(m_WindowWidth,m_WindowHeight,m_WindowName.c_str(),0,0);
+        m_Window = glfwCreateWindow(m_WindowWidth,m_WindowHeight,m_WindowTitle.c_str(),0,0);
 
         if(!m_Window)
         {
@@ -107,9 +107,9 @@ namespace OnLooker
     {
         return m_WindowHeight;
     }
-    std::string Window::getWindowName()
+    String Window::getWindowTitle()
     {
-        return m_WindowName;
+        return m_WindowTitle;
     }
 
     int Window::shouldWindowClose()
@@ -126,23 +126,23 @@ namespace OnLooker
     void Window::m_KeyCallback(GLFWwindow * aWindow, int aKey, int aScanCode, int aAction, int aMods)
     {
         //TODO:Send input data to singleton input manager
-        Input::getInstance()->handleKeyEvent(aKey,aAction);
+        Input::instance()->handleKeyEvent(aKey,aAction);
     }
     void Window::m_MouseButtonCallback(GLFWwindow * aWindow, int aButton, int aAction, int aMods)
     {
         //TODO:Send input data to singleton input manager
-        Input::getInstance()->handleMouseButtonEvent(aButton,aAction);
+        Input::instance()->handleMouseButtonEvent(aButton,aAction);
     }
     
     void Window::m_MouseMoveCallback(GLFWwindow * aWindow, double aXPosition, double aYPosition)
     {
         //TODO:Send input data to singleton input manager
-        Input::getInstance()->handleMouseMove(aXPosition,aYPosition);
+        Input::instance()->handleMouseMove(aXPosition,aYPosition);
     }
     void Window::m_MouseScrollCallback(GLFWwindow * aWindow, double aXAxis, double aYAxis)
     {
         //TODO:Send input data to singleton input manager
-        Input::getInstance()->handleMouseScroll(aXAxis,aYAxis);
+        Input::instance()->handleMouseScroll(aXAxis,aYAxis);
     }
 
     double Window::getTime()

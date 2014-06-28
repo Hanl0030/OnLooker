@@ -12,13 +12,13 @@ namespace OnLooker
     }
     Game::~Game()
     {
-        Renderer::getInstance()->unloadTexture("Bush.png");
+        Renderer::instance()->unloadTexture("Bush.png");
     }
 
 	void Game::load()
 	{
-		m_TextureHandles[0] =  Renderer::getInstance()->loadTexture("awesome.png");
-		m_TextureHandles[1] =  Renderer::getInstance()->loadTexture("testMap.png");
+		m_TextureHandles[0] =  Renderer::instance()->loadTexture("awesome.png");
+		m_TextureHandles[1] =  Renderer::instance()->loadTexture("testMap.png");
 		m_Color = new Color(Colors::indigo());
 
 		m_Shader = new Shader();
@@ -71,28 +71,39 @@ namespace OnLooker
 		glUniform1i(aTexTwo, 1);
 		
 
-		Renderer::getInstance()->checkForErrors();
+		Renderer::instance()->checkForErrors();
 	}
-
+    void Game::earlyUpdate()
+    {
+    }
     void Game::update()
     {
 
 		//Debug::console->output((double)sin(m_Counter));
 		//Debug::console->output((double)m_Counter);
 		//m_Counter += genRandomNumber(0,25,6);
-
-
+    }
+    void Game::lateUpdate()
+    {
 
     }
+    void Game::fixedUpdate()
+    {
+    }
+    void Game::collisionDetection()
+    {
+
+    }
+    
     void Game::render()
     {
-		//Renderer::getInstance()->drawTexture(m_TextureHandles[1],100.0f,200.0f,100.0f,100.0f);
-		//Renderer::getInstance()->drawTexture(m_TextureHandles[0],100.0f,200.0f,100.0f,100.0f);
+		//Renderer::instance()->drawTexture(m_TextureHandles[1],100.0f,200.0f,100.0f,100.0f);
+		//Renderer::instance()->drawTexture(m_TextureHandles[0],100.0f,200.0f,100.0f,100.0f);
 		
 		
 		/*m_Shader->useThisShader();
 
-		Renderer::getInstance()->checkForErrors();
+		Renderer::instance()->checkForErrors();
 		
 		glBindBuffer(GL_ARRAY_BUFFER,m_VBO);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,m_IBO);
@@ -127,8 +138,8 @@ namespace OnLooker
 
 		glBindBuffer(GL_ARRAY_BUFFER,0);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);*/
-		//Renderer::getInstance()->enableBlending(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
-		Renderer::getInstance()->checkForErrors();
+		//Renderer::instance()->enableBlending(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+		Renderer::instance()->checkForErrors();
 
 		//m_MaskShader->useThisShader();
 		m_TextureShader->useThisShader();
@@ -156,7 +167,7 @@ namespace OnLooker
 			glVertexAttribPointer(aTexCoords,2,GL_FLOAT,GL_FALSE,sizeof(VertexAttribute),(void*)offsetof(VertexAttribute,texCoords));
 			glEnableVertexAttribArray(aTexCoords);
 		}
-		Renderer::getInstance()->checkForErrors();
+		Renderer::instance()->checkForErrors();
 
 
 		GLint u_TexOffset = glGetUniformLocation(m_TextureShader->getShaderProgramHandle(),"u_TexOffset");
@@ -171,11 +182,16 @@ namespace OnLooker
 		glBindTexture(GL_TEXTURE_2D, m_Texture[1]->m_Texture->getID());
 
 		
-		Renderer::getInstance()->checkForErrors();
+		Renderer::instance()->checkForErrors();
 		glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_SHORT,0);
-		Renderer::getInstance()->checkForErrors();
+		Renderer::instance()->checkForErrors();
 		glBindBuffer(GL_ARRAY_BUFFER,0);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
+
+    }
+
+    void Game::gui()
+    {
 
     }
     

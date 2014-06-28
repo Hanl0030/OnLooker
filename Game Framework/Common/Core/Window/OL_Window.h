@@ -1,8 +1,8 @@
 #ifndef OL_WINDOW_H
 #define OL_WINDOW_H
 
-#include <string>
 #include "../Base Objects/OL_Object.h"
+#include "../Base Objects/OL_String.h"
 
 struct GLFWwindow;
 
@@ -36,7 +36,7 @@ namespace OnLooker
         *   @aWindowName - The title of the window
         *   Date Modified: 02/03/2014 by Nathan Hanlan
         */
-        Window(int aWidth, int aHeight, std::string aWindowName);
+        Window(int aWidth, int aHeight, String aWindowName);
         /*
         *   Function: Window
         *   Return Type: Destructor
@@ -46,7 +46,7 @@ namespace OnLooker
         */
         ~Window();
 
-        void onCreate(int aWidth, int aHeight, std::string aWindowName);
+        void onCreate(int aWidth, int aHeight, String aWindowName);
        
         /*
         *   Function: createWindow
@@ -97,7 +97,7 @@ namespace OnLooker
         *   Parameters: N/A
         *   Date Modified: 02/03/2014 by Nathan Hanlan
         */
-        std::string getWindowName();
+        String getWindowTitle();
 
         /*
         *   Function: shouldWindowClose
@@ -191,7 +191,7 @@ namespace OnLooker
         //The window height
         int m_WindowHeight;
         //The window name
-        std::string m_WindowName;
+        String m_WindowTitle;
         //A boolean to control if the window is allocated or not
         bool m_Allocated;
     };

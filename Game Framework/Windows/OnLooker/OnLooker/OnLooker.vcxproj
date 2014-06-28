@@ -60,6 +60,7 @@
     <ClInclude Include="..\..\..\Common\Utilities\OL_Debug.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_FilePath.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_Time.h" />
+    <ClInclude Include="..\..\..\Common\Utilities\OL_UniqueNumberGenerator.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_Utilities.h" />
     <ClInclude Include="Source\OL_Main.h" />
   </ItemGroup>
@@ -98,6 +99,7 @@
     <ClCompile Include="..\..\..\Common\Utilities\OL_Debug.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_FilePath.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Time.cpp" />
+    <ClCompile Include="..\..\..\Common\Utilities\OL_UniqueNumberGenerator.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Utilities.cpp" />
     <ClCompile Include="Source\OL_Main.cpp" />
   </ItemGroup>

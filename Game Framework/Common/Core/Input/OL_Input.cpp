@@ -17,7 +17,7 @@ namespace OnLooker
     using namespace Reflection;
 
     Input * Input::s_Instance = 0;
-    Input * Input::getInstance()
+    Input * Input::instance()
     {
         if(s_Instance == 0)
         {

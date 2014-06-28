@@ -1,4 +1,5 @@
 #include "OL_Renderer.h"
+#include "../Memory/OL_Memory.h"
 #include "../../Utilities/OL_Utilities.h"
 #include "../../Math/OL_Math.h"
 #include "OL_TextureReference.h"
@@ -7,11 +8,11 @@
 namespace OnLooker
 {
     Renderer * Renderer::s_Instance = 0;
-    Renderer * Renderer::getInstance()
+    Renderer * Renderer::instance()
     {
         if(s_Instance == 0)
         {
-            s_Instance = new Renderer();
+            s_Instance = Memory::instantiate<Renderer>();
         }
         return s_Instance;
     }
@@ -19,8 +20,7 @@ namespace OnLooker
     {
         if(s_Instance != 0)
         {
-            delete s_Instance;
-            s_Instance = 0;
+            s_Instance = Memory::destroy<Renderer>(s_Instance);
         }
     }
     Renderer::Renderer()
@@ -31,7 +31,7 @@ namespace OnLooker
     {
 
     }
-    bool Renderer::isReadyInitalized()
+    bool Renderer::isReady()
     {
         return m_Initialized;
     }

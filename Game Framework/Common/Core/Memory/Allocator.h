@@ -3,6 +3,8 @@
 
 #include <cstdint>
 #include <assert.h>
+#include <malloc.h>
+#include <new.h>
 #include "../Base Objects/OL_Object.h"
 
 namespace OnLooker

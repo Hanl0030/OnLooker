@@ -17,7 +17,7 @@ namespace OnLooker
     class Input : public Object
     {
     public:
-        static Input * getInstance();
+        static Input * instance();
         static void destroy();
         //Get the mouse position
         void mousePosition(float & x, float & y);

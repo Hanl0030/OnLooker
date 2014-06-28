@@ -24,7 +24,7 @@ namespace OnLooker
 
         *p = nullptr;
     }
-    PoolAllocator::~PoolAllocator()
+    PoolAllocator::~PoolAllocator() 
     {
         
         m_FreeList = nullptr;

@@ -6,6 +6,7 @@
 namespace OnLooker
 {
     class Game;
+    class PoolAllocator;
     /*
     *   Class: Application
     *   Base Class: N/A
@@ -23,7 +24,7 @@ namespace OnLooker
         *   Parameters: N/A
         *   Date Modified: 25/02/2014 by Nathan Hanlan
         */
-        static Application * getInstance();
+        static Application * instance();
         /*
         *   Function: destroy
         *   Return Type: static void
@@ -86,6 +87,7 @@ namespace OnLooker
 
         static Application * s_Instance;
         Game * m_Game;
+        friend PoolAllocator;
     };
 
 }

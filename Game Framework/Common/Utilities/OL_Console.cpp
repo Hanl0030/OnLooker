@@ -48,7 +48,7 @@ namespace OnLooker
         {
             createConsole();
         }
-        printf("Console: %f \n",aValue);
+        printf("Console: %d \n",aValue);
     }
     void Console::output(float aValue)
     {

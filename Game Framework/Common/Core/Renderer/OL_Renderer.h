@@ -17,6 +17,7 @@ namespace OnLooker
     class Mesh;
     class Texture;
     class TextureReference;
+    class PoolAllocator;
     /*
     *   Class: Renderer
     *   Base Class: N/A
@@ -28,10 +29,10 @@ namespace OnLooker
     class Renderer : public Object
     {
     public:
-        static Renderer * getInstance();
+        static Renderer * instance();
         static void destroy();
 
-        bool isReadyInitalized();
+        bool isReady();
 
         void initialize(double aWindowWidth, double aWindowHeight);
         //OpenGL States
@@ -96,6 +97,7 @@ namespace OnLooker
         Color m_ForegroundColor;
         Texture * getTexture(unsigned int aID);
         std::vector<TextureReference *> m_Textures;
+        friend PoolAllocator;
 
     };
 }

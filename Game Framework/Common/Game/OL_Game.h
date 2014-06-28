@@ -15,8 +15,15 @@ namespace OnLooker
         Game();
         ~Game();
 		void load();
+        void earlyUpdate();
         void update();
+        void lateUpdate();
+    
+        void fixedUpdate();
+        void collisionDetection();
+
         void render();
+        void gui();
 
         
     private:

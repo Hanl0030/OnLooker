@@ -394,10 +394,6 @@ namespace OnLooker
             error = glGetError();*/
         }
     }
-    const char * Renderer::getType()
-    {
-        return OL_INDESTRUCTIBLE_OBJECT;
-    }
 	std::string Renderer::toString()
 	{
 		return "";

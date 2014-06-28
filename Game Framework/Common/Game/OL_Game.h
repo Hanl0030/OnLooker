@@ -18,7 +18,7 @@ namespace OnLooker
         void update();
         void render();
 
-        const char * getType();
+        
     private:
 
 		unsigned int m_VBO;

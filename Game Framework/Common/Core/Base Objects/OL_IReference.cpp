@@ -27,8 +27,4 @@ namespace OnLooker
 	{
 		return m_ReferenceCount;
 	}
-	const char * IReference::getType()
-	{
-		return "IReference";
-	}
 }

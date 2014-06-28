@@ -1,6 +1,9 @@
 #ifndef OL_STRING_H
 #define OL_STRING_H
 
+#include "OL_Object.h"
+
+
 namespace OnLooker
 {
     /*
@@ -13,13 +16,13 @@ namespace OnLooker
     __fastcall attempts to put arguments in registers, rather than on the stack, thus making function calls faster.
 
     __thiscall calling convention is the default calling convention used by C++ member functions that do not use variable arguments.
-    
+   
 
     */
 
-    class PoolAllocator;
+    //A very rare type that is not apart of the Reflection system.
 
-    class String
+    class String : public Object
     {
     public:
         String(String & aString);
@@ -80,9 +83,12 @@ namespace OnLooker
         char at(const int aIndex);
         char operator[] (const int aIndex);
 
-        
-        static void init();
-        static void cleanUp();
+        static String empty();
+
+    protected:
+        virtual Reflection::Type getType();
+        virtual Reflection::Type baseType();
+        virtual Reflection::Type * instanceOf(int & aCount);
     private:
         //Helpers
         int getLength();
@@ -113,12 +119,6 @@ namespace OnLooker
         //Members
         int m_Length;
         char * m_Characters;
-
-        static PoolAllocator * m_Allocator;
-        static void * m_Memory;
-      
-
-
     };
 }
 

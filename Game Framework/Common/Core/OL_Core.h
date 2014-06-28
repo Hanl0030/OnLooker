@@ -13,7 +13,7 @@
 #include "Base Objects/OL_Output.h"
 #include "Window/OL_Window.h"
 #include "Window/OL_Application.h"
-#include "Window/OL_Input.h"
+#include "Input/OL_Input.h"
 #include "Renderer/OL_Renderer.h"
 #include "Renderer/OL_Shader.h"
 #include "Renderer/OL_VertexAttribute.h"

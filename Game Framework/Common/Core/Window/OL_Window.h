@@ -46,7 +46,7 @@ namespace OnLooker
         */
         ~Window();
 
-
+        void onCreate(int aWidth, int aHeight, std::string aWindowName);
        
         /*
         *   Function: createWindow
@@ -132,7 +132,7 @@ namespace OnLooker
         */
         void swapBuffers();
 
-        const char * getType();
+        
 
 
         //Methods

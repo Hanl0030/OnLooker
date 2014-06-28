@@ -73,10 +73,7 @@ namespace OnLooker
             }
         }
 
-        const char * Application::getType()
-        {
-            return OL_INDESTRUCTIBLE_OBJECT;
-        }
+        
 
         
 

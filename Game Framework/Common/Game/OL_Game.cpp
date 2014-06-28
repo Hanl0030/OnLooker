@@ -82,34 +82,6 @@ namespace OnLooker
 		//m_Counter += genRandomNumber(0,25,6);
 
 
-		if(Input::getInstance()->getKey(KeyCode::F1))
-		{
-			m_Transparency += 0.05f;
-			if(m_Transparency > 1.0f)
-			{
-				m_Transparency = 1.0f;
-			}
-		}
-		else if(Input::getInstance()->getKey(KeyCode::F2))
-		{
-			m_Transparency -= 0.05f;
-			if(m_Transparency < 0.0f)
-			{
-				m_Transparency = 0.0f;
-			}
-			//Debug::console->output(Time::m_Delta);
-			//Debug::console->output(m_Transparency);
-		}
-		else if(Input::getInstance()->getKey(KeyCode::K))
-		{
-
-			//glGetUniformLocation(2,"someName");
-			//glUniform1f(2,30);
-
-			//unsigned int handleToMeshLocation = Renderer::getInstance()->getMesh("somemesh.obj");
-			//Renderer::getInstance()->setMeshValue(handleToMeshLocation,30);
-			//Renderer::getInstance()->setMeshValue(1,2);
-		}
 
     }
     void Game::render()
@@ -206,9 +178,6 @@ namespace OnLooker
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
 
     }
-    const char * Game::getType()
-    {
-        return OL_INDESTRUCTIBLE_OBJECT;
-    }
+    
 
 }

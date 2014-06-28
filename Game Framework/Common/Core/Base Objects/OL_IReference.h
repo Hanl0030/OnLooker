@@ -55,14 +55,6 @@ namespace OnLooker
 		*/
 		virtual int getReferenceCount(); 
 
-		/*
-		*   Function: getType
-		*   Return Type: const char *
-		*   Description: returns the class type in a const char * format. Overrides object's pure virtual
-		*   Parameters: None
-		*   Date Modified: 18/3/2014 by Nathan Hanlan
-		*/
-		virtual const char * getType();
 	private:
 		//A variable to hold the count for amount of references pointing to this object.
 		int m_ReferenceCount;

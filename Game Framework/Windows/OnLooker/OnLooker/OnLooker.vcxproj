@@ -11,14 +11,32 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Array.h" />
     <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Component.h" />
     <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_IReference.h" />
     <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Object.h" />
     <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_Output.h" />
+    <ClInclude Include="..\..\..\Common\Core\Base Objects\OL_String.h" />
+    <ClInclude Include="..\..\..\Common\Core\Input\OL_Button.h" />
+    <ClInclude Include="..\..\..\Common\Core\Input\OL_HardwareControl.h" />
+    <ClInclude Include="..\..\..\Common\Core\Input\OL_Input.h" />
+    <ClInclude Include="..\..\..\Common\Core\Input\OL_InputListener.h" />
+    <ClInclude Include="..\..\..\Common\Core\Input\OL_Key.h" />
+    <ClInclude Include="..\..\..\Common\Core\Input\OL_KeyDef.h" />
     <ClInclude Include="..\..\..\Common\Core\Memory\Allocator.h" />
+    <ClInclude Include="..\..\..\Common\Core\Memory\LinearAllocator.h" />
     <ClInclude Include="..\..\..\Common\Core\Memory\OL_Memory.h" />
     <ClInclude Include="..\..\..\Common\Core\Memory\PoolAllocator.h" />
     <ClInclude Include="..\..\..\Common\Core\OL_Core.h" />
+    <ClInclude Include="..\..\..\Common\Core\Reflection\OL_Class.h" />
+    <ClInclude Include="..\..\..\Common\Core\Reflection\OL_Enum.h" />
+    <ClInclude Include="..\..\..\Common\Core\Reflection\OL_Interface.h" />
+    <ClInclude Include="..\..\..\Common\Core\Reflection\OL_Operators.h" />
+    <ClInclude Include="..\..\..\Common\Core\Reflection\OL_Primitive.h" />
+    <ClInclude Include="..\..\..\Common\Core\Reflection\OL_Reflection.h" />
+    <ClInclude Include="..\..\..\Common\Core\Reflection\OL_Type.h" />
+    <ClInclude Include="..\..\..\Common\Core\Reflection\OL_TypeFactory.h" />
+    <ClInclude Include="..\..\..\Common\Core\Reflection\OL_Types.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Color.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_EShaderType.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_Mesh.h" />
@@ -29,8 +47,6 @@
     <ClInclude Include="..\..\..\Common\Core\Renderer\OL_VertexAttribute.h" />
     <ClInclude Include="..\..\..\Common\Core\Renderer\TextureManager.h" />
     <ClInclude Include="..\..\..\Common\Core\Window\OL_Application.h" />
-    <ClInclude Include="..\..\..\Common\Core\Window\OL_Input.h" />
-    <ClInclude Include="..\..\..\Common\Core\Window\OL_KeyDef.h" />
     <ClInclude Include="..\..\..\Common\Core\Window\OL_Window.h" />
     <ClInclude Include="..\..\..\Common\Game\OL_Game.h" />
     <ClInclude Include="..\..\..\Common\Libraries\LodePNG\lodepng.h" />
@@ -43,16 +59,26 @@
     <ClInclude Include="..\..\..\Common\Utilities\OL_ConsoleMessage.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_Debug.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_FilePath.h" />
-    <ClInclude Include="..\..\..\Common\Utilities\OL_String.h" />
-    <ClInclude Include="..\..\..\Common\Utilities\OL_Utilities.h" />
     <ClInclude Include="..\..\..\Common\Utilities\OL_Time.h" />
+    <ClInclude Include="..\..\..\Common\Utilities\OL_Utilities.h" />
     <ClInclude Include="Source\OL_Main.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Common\Core\Base Objects\OL_IReference.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Base Objects\OL_Object.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Base Objects\OL_String.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Input\OL_Button.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Input\OL_HardwareControl.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Input\OL_Input.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Input\OL_InputListener.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Input\OL_Key.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Memory\Allocator.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Memory\LinearAllocator.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Memory\OL_Memory.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Memory\PoolAllocator.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Reflection\OL_Class.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Reflection\OL_Interface.cpp" />
+    <ClCompile Include="..\..\..\Common\Core\Reflection\OL_TypeFactory.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Color.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Mesh.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_Renderer.cpp" />
@@ -62,7 +88,6 @@
     <ClCompile Include="..\..\..\Common\Core\Renderer\TextureManager.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Renderer\OL_TextureReference.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Window\OL_Application.cpp" />
-    <ClCompile Include="..\..\..\Common\Core\Window\OL_Input.cpp" />
     <ClCompile Include="..\..\..\Common\Core\Window\OL_Window.cpp" />
     <ClCompile Include="..\..\..\Common\Game\OL_Game.cpp" />
     <ClCompile Include="..\..\..\Common\Libraries\LodePNG\lodepng.cpp" />
@@ -72,7 +97,6 @@
     <ClCompile Include="..\..\..\Common\Utilities\OL_ConsoleMessage.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Debug.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_FilePath.cpp" />
-    <ClCompile Include="..\..\..\Common\Utilities\OL_String.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Time.cpp" />
     <ClCompile Include="..\..\..\Common\Utilities\OL_Utilities.cpp" />
     <ClCompile Include="Source\OL_Main.cpp" />

@@ -1,8 +1,11 @@
 #include "OL_String.h"
-#include "../OL_Common.h"
+#include "../Reflection/OL_Types.h"
+#include "../Reflection/OL_TypeFactory.h"
 
 namespace OnLooker
 {
+    using namespace Reflection;
+
     String::String(String & aString)
     {
         m_Length = 0;
@@ -189,6 +192,40 @@ namespace OnLooker
         return getCharacterAtIndex(aIndex);
     }
 
+    String String::empty()
+    {
+        return String("");
+    }
+
+    Type String::getType()
+    {
+        return TypeFactory::create("String",TypeID::STRING,sizeof(String));
+    }
+    Type String::baseType()
+    {
+        return TypeFactory::create("Object",TypeID::OBJECT,sizeof(Object));
+    }
+    Type * String::instanceOf(int & aCount)
+    {
+        aCount = 2;
+        char ** names = new char * [aCount];
+        int * typeIDs = new int[aCount];
+        int * sizes = new int[aCount];
+
+        int prevCount = 0;
+        Type * previousTypes = Object::instanceOf(prevCount);
+
+        names[0] = "Object";
+        typeIDs[0] = TypeID::OBJECT;
+        sizes[0] = sizeof(Object);
+
+        Type * types = TypeFactory::create(names,typeIDs,sizes,aCount,previousTypes,prevCount);
+
+        delete[]names;
+        delete[]typeIDs;
+        delete[]sizes;
+        return types;
+    }
 
     //NEW
     int String::getLength()
@@ -351,8 +388,7 @@ namespace OnLooker
         {
             return 0;
         }
-        //return new char[aSize];
-        return Memory::instantiate<char>(aSize);
+        return new char[aSize];
     }
     void String::deallocString(char * aString)
     {
@@ -373,17 +409,5 @@ namespace OnLooker
         {
             m_Characters[aLocation] = aCharacter;
         }
-    }
-
-    PoolAllocator * String::m_Allocator = nullptr;
-    void * String::m_Memory = nullptr;
-
-    void String::init()
-    {
-
-    }
-    void String::cleanUp()
-    {
-
     }
 }

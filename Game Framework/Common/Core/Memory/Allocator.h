@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include <assert.h>
+#include "../Base Objects/OL_Object.h"
 
 namespace OnLooker
 {
@@ -63,7 +64,15 @@ namespace OnLooker
         return adjustment;
     }
 
-    class Allocator
+
+    /*
+    *   Class: Allocator
+    *   Base Class: Object
+    *   Interfaces: N/A 
+    *   Description: Base Allocator for all coming Allocators
+    *   Date Modified: 27/06/2014 by Nathan Hanlan
+    */
+    class Allocator : public Object
     {
     public:
         Allocator()
@@ -77,8 +86,8 @@ namespace OnLooker
             ASSERT(m_NumberOfAllocations == 0 && m_UsedMemory == 0);
         }
 
-        //virtual void * allocate(u32 aSize, u8 aAlignment) = 0;
-        //virtual void deallocate(void * p) = 0;
+        virtual void * allocate(u32 aSize, u8 aAlignment) = 0;
+        virtual void deallocate(void * p) = 0;
 
         template<class T> T * allocateNew()
         {
@@ -122,7 +131,7 @@ namespace OnLooker
                 new(&objectArray[i])T;
             }
 
-            return objectArray;
+            return p;
         }
         template<class T> void deallocateArray(T * aArray)
         {
@@ -158,6 +167,31 @@ namespace OnLooker
         {
             return m_NumberOfAllocations;
         }
+
+        /*
+        *   Function: getType
+        *   Return Type: Type
+        *   Description: Returns the type for Allocator
+        *   Parameters: none
+        *   Date Modified: 27/06/2014 by Nathan Hanlan
+        */
+        virtual Reflection::Type getType();
+        /*
+        *   Function: baseType()
+        *   Return Type: Type
+        *   Description: Returns the base type for Allocator
+        *   Parameters: none
+        *   Date Modified: 27/06/2014 by Nathan Hanlan
+        */
+        virtual Reflection::Type baseType();
+        /*
+        *   Function: instanceOf
+        *   Return Type: Type
+        *   Description: Returns the parent types of this class
+        *   Parameters: none
+        *   Date Modified: 27/06/2014 by Nathan Hanlan
+        */
+        virtual Reflection::Type * instanceOf(int & aCount);
 
     protected:
         u32 m_UsedMemory;

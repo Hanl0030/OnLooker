@@ -28,7 +28,13 @@ namespace OnLooker
             destroy();
         }
     }
-
+    void Window::onCreate(int aWidth, int aHeight, std::string aWindowName)
+    {
+        m_Window = 0;
+        m_WindowWidth = aWidth;
+        m_WindowHeight = aHeight;
+        m_WindowName = aWindowName;
+    }
        
 
     bool Window::createWindow()
@@ -151,10 +157,7 @@ namespace OnLooker
     {
         glfwSwapBuffers(m_Window);
     }
-    const char * Window::getType()
-    {
-        return OL_INDESTRUCTIBLE_OBJECT;
-    }
+    
 
 	/*Window::Window()
 	{

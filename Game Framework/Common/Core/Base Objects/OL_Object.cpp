@@ -1,57 +1,44 @@
 #include "OL_Object.h"
-
-const char * OL_INDESTRUCTIBLE_OBJECT = "__INDESTRUCTIBLE_OBJECT__";
-
+#include "../Reflection/OL_Types.h"
+#include "../Reflection/OL_TypeFactory.h"
 namespace OnLooker
 {
 
-	int Object::s_ReferenceID = 0;
+    using namespace Reflection;
 
-	Object::Object()
-	{
-		m_ReferenceID = nextRefrenceID();
-	}
-
-	Object::~Object()
-	{
-        
-	}
-
-
-	Object * Object::destroy(Object * aObject)
-	{ 
-		if(aObject != 0)
-		{
-			if(aObject->getType() != OL_INDESTRUCTIBLE_OBJECT)
-			{
-				delete aObject;
-				aObject = 0;
-			}
-		}
-		return aObject;
-	}
-
-    std::string Object::toString()
+    Object::Object()
     {
-        return "";
+
+    }
+    Object::~Object()
+    {
+
+    }
+    Type Object::getType()
+    {
+        return TypeFactory::create("Object",TypeID::OBJECT,sizeof(Object));
+    }
+    Type Object::baseType()
+    {
+        return TypeFactory::create("Class",TypeID::CLASS,sizeof(Class));
+    }
+    Type * Object::instanceOf(int & aCount)
+    {
+        aCount = 1;
+        char ** names = new char * [aCount];
+        int * typeIDs = new int[aCount];
+        int * sizes = new int[aCount];
+
+        names[0] = "Class";
+        typeIDs[0] = TypeID::CLASS;
+        sizes[0] = sizeof(Class);
+
+        Type * types = TypeFactory::create(names,typeIDs,sizes,aCount);
+
+        delete[]names;
+        delete[]typeIDs;
+        delete[]sizes;
+        return types; 
     }
 
-	char * Object::getName()
-	{
-		return m_Name;
-	}
-	void Object::setName(char * aName)
-	{
-		m_Name = aName;
-	}
-	int Object::getReferenceID()
-	{
-		return m_ReferenceID;
-	}
-	
-	int Object::nextRefrenceID()
-	{
-		s_ReferenceID ++;
-		return s_ReferenceID - 1;
-	}
 }

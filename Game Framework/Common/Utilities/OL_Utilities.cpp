@@ -5,7 +5,6 @@
 #include <sstream>
 #include <stdlib.h>
 #include <time.h>
-#include "../Math/OL_Math.h"
 using namespace std;
 
 namespace OnLooker
@@ -18,7 +17,7 @@ namespace OnLooker
         stream >> number;
         if(stream.fail())
         {
-            Debug::console->outputFormat("Failed to convert string to int");
+            
             return 0;
         }
 
@@ -32,7 +31,7 @@ namespace OnLooker
         stream >> number;
         if(stream.fail())
         {
-            Debug::console->outputFormat("Failed to convert string to int");
+            
             return 0;
         }
 
@@ -46,7 +45,7 @@ namespace OnLooker
         stream >> number;
         if(stream.fail())
         {
-            Debug::console->outputFormat("Failed to convert string to short");
+            
             return 0;
         }
 
@@ -60,7 +59,7 @@ namespace OnLooker
         stream >> number;
         if(stream.fail())
         {
-            Debug::console->outputFormat("Failed to convert string to short");
+            
             return 0;
         }
 
@@ -74,7 +73,7 @@ namespace OnLooker
         stream >> number;
         if(stream.fail())
         {
-            Debug::console->outputFormat("Failed to convert string to float");
+            
             return 0.0f;
         }
 
@@ -88,7 +87,7 @@ namespace OnLooker
         stream >> number;
         if(stream.fail())
         {
-            Debug::console->outputFormat("Failed to convert string to double");
+            
             return 0;
         }
 
@@ -221,7 +220,7 @@ namespace OnLooker
         ifstream readStream(filename);
 	    if(!readStream.is_open())
 	    {
-            Debug::console->outputFormat("Failed to open file");
+            
             ofstream  writeStream(filename);
             writeStream << "Heres the file";
             writeStream.close();

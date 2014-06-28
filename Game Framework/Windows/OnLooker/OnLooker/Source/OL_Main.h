@@ -55,7 +55,6 @@ namespace OnLooker
         */
         int run();
 
-        const char * getType();
 
 		
 

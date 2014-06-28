@@ -51,7 +51,7 @@ namespace OnLooker
         */
         void onIdle();
 
-        const char * getType();
+        
 
 
         //Methods

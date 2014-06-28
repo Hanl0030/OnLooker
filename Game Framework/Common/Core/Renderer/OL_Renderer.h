@@ -84,7 +84,6 @@ namespace OnLooker
 
         void checkForErrors();
 
-        const char * getType();
 		std::string toString();
 
     private:

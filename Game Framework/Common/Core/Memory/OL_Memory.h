@@ -1,38 +1,16 @@
 #ifndef OL_MEMORY_H
 #define OL_MEMORY_H
 
-//=================================================
-//=================DO NOT EDIT=====================
-//=================================================
 
+#include "PoolAllocator.h"
+#include "../Base Objects/OL_Object.h"
 
+//Byte Defintiions
 #define KILO_BYTE 1024             //1024
 #define MEGA_BYTE 1024 * KILO_BYTE //1048576
 #define GIGA_BYTE 1024 * MEGA_BYTE //1073741824
-//
-#define MEM_SIZE (1*MEM_BY + KILO_BYTE * MEM_KB + MEGA_BYTE * MEM_MB + GIGA_BYTE * MEM_GB )
-
-
-
-//=================================================
-//=====================EDIT========================
-//=================================================
-
-//Maximum allocations
-#define ALLOC_SIZE (int)(MEM_SIZE*0.125)
-
-//Memory Amount - MUST NOT TOTAL TO 0
-#define MEM_BY 0
-#define MEM_KB 0
-#define MEM_MB 1
-#define MEM_GB 0
-
-
-
 namespace OnLooker
 {
-    class PoolAllocator;
-
     namespace Memory
     {
         //Define your pre allocation sizes here
@@ -56,9 +34,9 @@ namespace OnLooker
 
         //There is currently 8 block sizes in powers of two
         //There is a ninth block size which is to be user defined.
-        namespace EAllocator
+        namespace Allocator
         {
-            enum EAllocator
+            enum Allocator
             {
                 BLOCK_8,
                 BLOCK_16,
@@ -80,18 +58,23 @@ namespace OnLooker
             return MemoryManager::instance()->instantiate<T>();
         }
         template<class T>
-        T * instantiate(int aSize)
+        T * instantiate(int aLength)
         {
-            return MemoryManager::instance()->instantiate<T>(aSize);
+            return MemoryManager::instance()->instantiate<T>(aLength);
         }
         template<class T>
         T * destroy(void * aPtr)
         {
             return MemoryManager::instance()->destroy<T>(aPtr);
         }
+        template<class T>
+        T * destroy(void * aPtr, int aLength)
+        {
+            return MemoryManager::instance()->destroy<T>(aPtr,aLength);
+        }
     }
 
-    class MemoryManager
+    class MemoryManager : public Object
     {
     public:
         //Singleton Accessors
@@ -112,18 +95,18 @@ namespace OnLooker
             }
             return allocator->allocate<T>();
         }
-
+        //Same as the other allocator except this is for arrays
         template<class T>
-        T * instantiate(int aSize)
+        T * instantiate(int aLength)
         {
-            int size = sizeof(T) * aSize;
+            int size = sizeof(T) * aLength;
             PoolAllocator * allocator = getAllocator(size);
             if(allocator == nullptr)
             {
                 //Bad Size
                 return nullptr;
             }
-            return allocator->allocateArray<T>(aSize);
+            return allocator->allocate<T>(aLength);
         }
         
         //Get the allocator of the proper size and deallocate for the object T
@@ -142,20 +125,24 @@ namespace OnLooker
             allocator->deallocate<T>(aPtr);
             return nullptr;
         }
+        //Same as the other destroy function but this is for arrays
         template<class T>
-        T * destroyArray(void * aPtr,int aSize)
+        T * destroy(void * aPtr, int aLength)
         {
-            int size = sizeof(T) * aSize;
+            int size = sizeof(T) * aLength;
             PoolAllocator * allocator = getAllocator(size);
             if(allocator == nullptr || aPtr == nullptr)
             {
                 //Bad Size
                 return (T*)aPtr;
             }
-            allocator->deallocateArray<T>(aPtr);
+            allocator->deallocate<T>(aPtr);
             return nullptr;
         }
         
+        virtual Reflection::Type getType();
+        virtual Reflection::Type baseType();
+        virtual Reflection::Type * instanceOf(int & aCount);
 
     private:
         static MemoryManager * s_Instance;
@@ -176,7 +163,7 @@ namespace OnLooker
         void * m_Block1024;      //7
         void * m_BigBlock;       //8
         //Array of Allocators
-        PoolAllocator * m_Allocator[Memory::EAllocator::BLOCK_COUNT];
+        PoolAllocator * m_Allocator[Memory::Allocator::BLOCK_COUNT];
         
     };
 

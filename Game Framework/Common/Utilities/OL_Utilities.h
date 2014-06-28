@@ -1,49 +1,18 @@
 #ifndef OL_UTILITIES_H
 #define OL_UTILITIES_H
 
-#include "OL_Time.h"
-#include "OL_Debug.h"
-#include "OL_Console.h"
-#include "OL_FilePath.h"
-#include "OL_String.h"
 #include <iostream>
 #include <string>
 
+#include "OL_Console.h"
+#include "OL_ConsoleMessage.h"
+#include "OL_Debug.h"
+#include "OL_FilePath.h"
+#include "OL_Time.h"
 
 
 namespace OnLooker
 {
-    #define loop(X) for(int i = 0; i < X; i++)
-
-    inline bool inBounds(const float & aValue,const float & aLower,const float & aHigher)
-    {
-        if(aValue >= aLower && aValue <= aHigher)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    inline bool inBounds(const int & aValue,const int & aLower,const int & aHigher)
-    {
-        if(aValue >= aLower && aValue <= aHigher)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    inline void output(std::string aMsg)
-    {
-        std::cout << aMsg.c_str() << std::endl;
-    }
-    inline void log(std::string aMsg)
-    {
-        std::cout << "[Debug] " << aMsg.c_str() << std::endl;
-    }
-
-
-    class Vector2;
     /*
     *   Function: convertStringToInt
     *   Return Type: int
@@ -178,7 +147,37 @@ namespace OnLooker
     std::string loadCompleteFile(const char* filename);
 
     int getIndexOf(int col, int row, int maxRows);
-    Vector2 elementOf(int index, int maxRows);
+
+    //Short hand loop
+    #define loop(X) for(int i = 0; i < X; i++)
+
+    //determine if the value is between the lower and higher bounds. Inclusive
+    inline bool inBounds(const float & aValue,const float & aLower,const float & aHigher)
+    {
+        if(aValue >= aLower && aValue <= aHigher)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    inline bool inBounds(const int & aValue,const int & aLower,const int & aHigher)
+    {
+        if(aValue >= aLower && aValue <= aHigher)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    inline void output(std::string aMsg)
+    {
+        std::cout << aMsg.c_str() << std::endl;
+    }
+    inline void log(std::string aMsg)
+    {
+        std::cout << "[Debug] " << aMsg.c_str() << std::endl;
+    }
 }
 
 
